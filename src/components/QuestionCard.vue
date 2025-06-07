@@ -11,6 +11,16 @@ onMounted(() => {
         autofocus.value.focus()
     }, 500)
 })
+
+function submitAnswer() {
+    console.log(answer.value);
+    answer.value = '';
+    autofocus.value.focus()
+}
+
+function handleBlur() {
+    autofocus.value.focus()
+}
 </script>
 
 <template>
@@ -27,8 +37,8 @@ onMounted(() => {
             <div class="answer_item f">I</div>
         </div>
         <div class="answer">
-            <input v-model="answer" type="text" inputmode="text" aria-label="Ответ" ref="autofocus">
-            <div class="button">
+            <input v-model="answer" type="text" inputmode="text" aria-label="Ответ" ref="autofocus" @blur="handleBlur">
+            <div class="button" @click="submitAnswer">
                 <ion-icon slot="icon-only" :icon="send"></ion-icon>
             </div>
         </div>
@@ -78,9 +88,10 @@ onMounted(() => {
         border-radius: 3px;
         position: absolute;
         right: 10px;
-        top: 10px;
+        top: 50%;
+        transform: translate(0, -50%);
         z-index: 5;
-        font-size: 18px;
+        font-size: 24px;
     }
 }
 
