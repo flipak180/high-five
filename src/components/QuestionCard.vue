@@ -69,7 +69,7 @@ onMounted(() => {
     }
 
     .button {
-        background: #000;
+        background: transparent;
         padding: 6px;
         display: inline-flex;
         justify-content: center;
