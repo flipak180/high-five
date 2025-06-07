@@ -1,7 +1,7 @@
 {
-  "name": "think",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "vue-vite"
+    "name": "think",
+    "integrations": {
+        "capacitor": {}
+    },
+    "type": "vue-vite"
 }
