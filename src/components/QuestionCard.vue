@@ -45,7 +45,7 @@ const answer = ref('')
 
 .answer {
     position: fixed;
-    bottom: 0;
+    bottom: var(--ion-safe-area-bottom, 0);
     left: 0;
     width: 100%;
     background: rgb(13, 13, 13);
