@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import {ref} from "vue";
-import {IonIcon, IonInput} from '@ionic/vue';
-import {useAutofocus} from "@/composables/useAutofocus";
+import {onMounted, Ref, ref, useTemplateRef} from "vue";
+import {IonIcon} from '@ionic/vue';
 import {send} from "ionicons/icons";
 
-useAutofocus()
+const autofocus: Ref = useTemplateRef('autofocus');
 const answer = ref('')
+
+onMounted(() => {
+    setTimeout(() => {
+        autofocus.value.focus()
+    }, 500)
+})
 </script>
 
 <template>
@@ -22,7 +27,7 @@ const answer = ref('')
             <div class="answer_item f">I</div>
         </div>
         <div class="answer">
-            <ion-input v-model="answer" type="text" inputmode="text" aria-label="Ответ" ref="autofocus"></ion-input>
+            <input v-model="answer" type="text" inputmode="text" aria-label="Ответ" ref="autofocus">
             <div class="button">
                 <ion-icon slot="icon-only" :icon="send"></ion-icon>
             </div>
@@ -52,11 +57,15 @@ const answer = ref('')
     border-top: 0.8px solid rgb(38, 38, 38);
     padding: 5px;
 
-    ion-input {
-        --background: var(--grey);
-        --border-radius: 4px;
-        --padding-start: 8px;
-        --padding-end: 8px;
+    input {
+        background: var(--grey);
+        border-radius: 4px;
+        padding: 10px;
+        outline: none;
+        border: none;
+        width: 100%;
+        display: block;
+        font-size: 16px;
     }
 
     .button {
@@ -68,8 +77,8 @@ const answer = ref('')
         text-align: center;
         border-radius: 3px;
         position: absolute;
-        right: 12px;
-        top: 12px;
+        right: 10px;
+        top: 10px;
         z-index: 5;
         font-size: 18px;
     }
