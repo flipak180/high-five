@@ -4,24 +4,10 @@ import TheCard from "@/components/TheCard.vue";
 import router from "@/router";
 
 const questions = [
-    'Знакомство', // место, ред флаги, фото
-    'Параметры', // имя, знак зодиака, рост
-    'Предпочтения', // еда, спорт, образование
-    'Свидание', // место, через сколько, кто платит, ред флаги
-    'Отношения', // тип (свободные, серьезные, легкие), афиширование,
-    'Досуг', // места, частота,
-    'Совместный быт', // готовка, уборка, продукты, квартплата
-    'Путешествия', // частота, тут или заграницу, цель - пляж, история..
-    'Интимная жизнь', // позы, частота, игрушки, табу
-    'Финансы', // заработок партнера, общий бюджет
-    'Хобби', //
-    'Друзья', //
-    'Недвижимость', //
-    'Ссоры', // Причины, измены, примирение
-    'Расставание', //
-    'Эмоции', //
-    'Свадьба', //
-    'Дети', //
+    'Вкусная сладость',
+    'Лучший гарнир',
+    'Блюда русской кухни',
+    'Очень длинный текст для какого-то вопроса',
 ];
 </script>
 
@@ -29,10 +15,9 @@ const questions = [
     <div class="questions">
         <the-card class="question" v-for="question in questions" :key="question" @click="router.push({ name: 'question', params: { id: 1 } })">
             <div class="question__img" :style="{backgroundColor: helpers.getRandomColor()}">
-
-            </div>
-            <div class="question__title">
-                {{ question }}
+                <div class="question__title">
+                    {{ question }}
+                </div>
             </div>
         </the-card>
     </div>
@@ -41,16 +26,22 @@ const questions = [
 <style scoped lang="scss">
 .questions {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    grid-template-columns: 1fr;
+    gap: 8px;
 }
 .question {
 
     &__img {
-        aspect-ratio: 1/1;
+        aspect-ratio: 5/1;
         width: 100%;
         border-radius: 8px;
         margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        padding: 8px;
+        text-align: center;
     }
     &__title {
 
