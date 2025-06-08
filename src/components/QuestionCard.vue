@@ -1,22 +1,23 @@
 <script setup lang="ts">
-import {computed, onMounted, Ref, ref, useTemplateRef} from "vue";
+import {onMounted, Ref, ref, useTemplateRef} from "vue";
 import {IonIcon} from '@ionic/vue';
 import {send} from "ionicons/icons";
 import {Haptics, NotificationType} from "@capacitor/haptics";
 import {useRoute} from "vue-router";
-import questionsList from "@/data/questionsList";
 
 const route = useRoute();
-const themeId = +route.params.id;
-const question = computed(() => {
-    return questionsList.find(question => question.theme_id === themeId)
-})
+const theme_id = +route.params.theme_id;
+const question_id = +route.params.question_id;
+const question = ref(null)
 
 const autofocus: Ref = useTemplateRef('autofocus');
 const answer = ref('')
 const error = ref(false)
 
-onMounted(() => {
+onMounted(async () => {
+    const data = await import(`@/data/1_food/question_${theme_id}_${question_id}.ts`);
+    question.value = data.default;
+
     setTimeout(() => {
         setFocus()
     }, 500)

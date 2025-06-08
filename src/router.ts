@@ -20,7 +20,7 @@ const routes: Array<RouteRecordRaw> = [
         component: ThemeDetailsPage
     },
     {
-        path: '/questions/:id',
+        path: '/themes/:theme_id/question/:question_id',
         name: 'question',
         component: QuestionPage
     }

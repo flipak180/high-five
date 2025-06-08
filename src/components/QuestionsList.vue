@@ -11,11 +11,21 @@ const themeId = +route.params.id;
 const questions = computed(() => {
     return questionsList.filter(question => question.theme_id === themeId)
 })
+
+function handleClick(question) {
+    router.push({
+        name: 'question',
+        params: {
+            theme_id: question.theme_id ,
+            question_id: question.id ,
+        }
+    })
+}
 </script>
 
 <template>
     <div class="questions">
-        <the-card class="question" v-for="question in questions" :key="question.id" @click="router.push({ name: 'question', params: { id: question.id } })">
+        <the-card class="question" v-for="question in questions" :key="question.id" @click="handleClick(question)">
             <div class="question__img">
                 <div class="question__title">
                     {{ question.title }}
