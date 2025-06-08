@@ -10,7 +10,7 @@ const theme_id = +route.params.id;
 const questions = ref([])
 
 onMounted(async () => {
-    const data = await import(`@/data/1_food/questionsList.ts`);
+    const data = await import(`@/data/${theme_id}/questions-list.ts`);
     questions.value = data.default;
 })
 

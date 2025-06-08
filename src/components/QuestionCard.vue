@@ -15,7 +15,7 @@ const answer = ref('')
 const error = ref(false)
 
 onMounted(async () => {
-    const data = await import(`@/data/1_food/question_${theme_id}_${question_id}.ts`);
+    const data = await import(`@/data/${theme_id}/${question_id}.ts`);
     question.value = data.default;
 
     setTimeout(() => {

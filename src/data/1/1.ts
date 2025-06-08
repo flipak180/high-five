@@ -1,6 +1,6 @@
 export default {
     id: 1,
-    text: 'Еда',
+    text: 'Сладость',
     answers: [
         { text: 'Печенье', percent: '10%', synonyms: ['Печенюшки'] },
         { text: 'Мороженое', percent: '50%', synonyms: [] },
