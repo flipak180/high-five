@@ -30,3 +30,16 @@ npm-debug.log*
 /platforms
 /plugins
 /www
+/android
+/ios
+/icons
+/resources/android
+/resources/ios
+.env.local
+/public/assets
+/public/manifest.webmanifest
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
