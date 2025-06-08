@@ -4,6 +4,8 @@ import {useRoute} from "vue-router";
 import {onMounted, ref} from "vue";
 import router from "@/router";
 import TheCard from "@/components/TheCard.vue";
+import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import {faLock} from "@fortawesome/free-solid-svg-icons";
 
 const route = useRoute();
 const theme_id = +route.params.id;
@@ -39,8 +41,9 @@ function handleClick(question) {
             <div class="questions">
                 <the-card class="question" v-for="question in questions" :key="question.id" @click="handleClick(question)">
                     <div class="question__img">
-                        <div class="question__title">
-                            {{ question.title }}
+                        <div class="question__title" v-if="question.id === 1">{{ question.title }}</div>
+                        <div class="question__title" v-else>
+                            <FontAwesomeIcon class="theme__icon" :icon="faLock" />
                         </div>
                     </div>
                 </the-card>

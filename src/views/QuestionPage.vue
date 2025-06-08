@@ -4,20 +4,23 @@ import {useRoute} from "vue-router";
 import {onMounted, Ref, ref, useTemplateRef} from "vue";
 import {Haptics, NotificationType} from "@capacitor/haptics";
 import {send} from "ionicons/icons";
+import {Question} from "@/interfaces";
 
 const route = useRoute();
 const theme_id = +route.params.theme_id;
 const question_id = +route.params.question_id;
-const question = ref(null)
+const question = ref<Question>()
 
 const autofocus: Ref = useTemplateRef('autofocus');
-const answer = ref('')
-const error = ref(false)
+const userAnswer = ref('')
+const error = ref<boolean>(false)
+const opened = ref<number[]>([])
 
 onMounted(async () => {
     const data = await import(`@/data/${theme_id}/${question_id}.ts`);
     question.value = data.default;
 
+    setFocus()
     setTimeout(() => {
         setFocus()
     }, 500)
@@ -25,13 +28,16 @@ onMounted(async () => {
 
 async function submitAnswer() {
     error.value = false;
-    if (Math.floor((Math.random() * 100) + 1) % 2) {
-        //
+    const existedAnswer = question.value.answers
+        .find(answer => [answer.text, ...answer.synonyms].map(answer => answer.toLowerCase()).includes(userAnswer.value.toLowerCase()));
+    if (existedAnswer) {
+        console.log(existedAnswer);
+        opened.value.push(existedAnswer.id)
     } else {
         error.value = true;
         await Haptics.notification({ type: NotificationType.Error });
     }
-    answer.value = '';
+    userAnswer.value = '';
     setFocus()
 }
 
@@ -53,7 +59,7 @@ function setFocus() {
         <ion-content :fullscreen="true">
             <div class="question">
                 <div class="question__grid ion-padding ion-margin-bottom">
-                    <div class="answer" v-for="answer in question?.answers" :key="answer.id" :class="{ opened: answer.opened }">
+                    <div class="answer" v-for="answer in question?.answers" :key="answer.id" :class="{ opened: opened.includes(answer.id) }">
                         <div class="answer__content">
                             <div class="answer__text">{{ answer.text }}</div>
                             <div class="answer__percent">{{ answer.percent }}</div>
@@ -61,7 +67,7 @@ function setFocus() {
                     </div>
                 </div>
                 <form :class="{shake: error}" @submit.prevent="submitAnswer">
-                    <input v-model="answer" type="text" inputmode="text" aria-label="Ответ" ref="autofocus" @blur="setFocus">
+                    <input v-model="userAnswer" type="text" inputmode="text" aria-label="Ответ" ref="autofocus" @blur="setFocus">
                     <div class="button" @click="submitAnswer">
                         <ion-icon slot="icon-only" :icon="send"></ion-icon>
                     </div>
