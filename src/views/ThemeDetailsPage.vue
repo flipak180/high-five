@@ -2,11 +2,11 @@
 import {IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/vue';
 import {useRoute} from "vue-router";
 import {onMounted, ref} from "vue";
-import router from "@/router";
 import TheCard from "@/components/TheCard.vue";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import {faLock} from "@fortawesome/free-solid-svg-icons";
-import {Question} from "@/interfaces";
+import {Question} from "@/misc/interfaces";
+import router from "@/misc/router";
 
 const route = useRoute();
 const theme_id = +route.params.id;

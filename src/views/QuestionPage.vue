@@ -4,7 +4,7 @@ import {useRoute} from "vue-router";
 import {onMounted, Ref, ref, useTemplateRef} from "vue";
 import {Haptics, NotificationType} from "@capacitor/haptics";
 import {send} from "ionicons/icons";
-import {Question} from "@/interfaces";
+import {Question} from "@/misc/interfaces";
 
 const route = useRoute();
 const theme_id = +route.params.theme_id;

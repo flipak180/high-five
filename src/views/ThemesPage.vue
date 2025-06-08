@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/vue';
-import router from "@/router";
 import themesList from "@/data/themes-list";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import TheCard from "@/components/TheCard.vue";
-import {Theme} from "@/interfaces";
+import {Theme} from "@/misc/interfaces";
+import router from "@/misc/router";
 
 function handleClick(theme: Theme) {
     router.push({ name: 'theme', params: { id: theme.id } })

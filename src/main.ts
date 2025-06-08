@@ -1,6 +1,5 @@
 import {createApp} from 'vue'
 import App from './App.vue'
-import router from './router';
 
 import {IonicVue} from '@ionic/vue';
 
@@ -33,10 +32,17 @@ import '@ionic/vue/css/palettes/dark.system.css';
 /* Theme variables */
 import './theme/variables.scss';
 import './theme/global.scss';
+import router from "@/misc/router";
+import {createPinia} from "pinia";
+import {piniaCapacitorPersist} from "pinia-plugin-capacitor-persist";
+
+const pinia = createPinia()
+pinia.use(piniaCapacitorPersist);
 
 const app = createApp(App)
     .use(IonicVue)
-    .use(router);
+    .use(router)
+    .use(pinia);
 
 router.isReady().then(() => {
     app.mount('#app');

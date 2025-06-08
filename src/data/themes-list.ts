@@ -1,4 +1,3 @@
-import helpers from "@/helpers";
 import {
     faAtom,
     faBook,
@@ -13,6 +12,7 @@ import {
     faPaw,
     faUtensils
 } from "@fortawesome/free-solid-svg-icons";
+import helpers from "@/misc/helpers";
 
 export default [
     { id: 1, title: 'Кулинария', icon: faUtensils, progress: helpers.getRandomNumber(0, 100), color: helpers.getRandomColor() },
