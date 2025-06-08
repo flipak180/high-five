@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import TheCard from "@/components/TheCard.vue";
 import router from "@/router";
 import themesList from "@/data/themesList";
+import TheCard from "@/components/ui/TheCard.vue";
 
 // const themes = [
 //     'Знакомство', // место, ред флаги, фото

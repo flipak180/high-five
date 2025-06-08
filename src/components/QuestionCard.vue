@@ -75,6 +75,7 @@ form {
     left: 0;
     width: 100%;
     padding: 10px;
+    background: #000;
 
     input {
         background: var(--grey);

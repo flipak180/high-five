@@ -1,23 +1,25 @@
 <script setup lang="ts">
 
 import {useRoute} from "vue-router";
-import {computed} from "vue";
-import questionsList from "@/data/questionsList";
+import {onMounted, ref} from "vue";
 import router from "@/router";
-import TheCard from "@/components/TheCard.vue";
+import TheCard from "@/components/ui/TheCard.vue";
 
 const route = useRoute();
-const themeId = +route.params.id;
-const questions = computed(() => {
-    return questionsList.filter(question => question.theme_id === themeId)
+const theme_id = +route.params.id;
+const questions = ref([])
+
+onMounted(async () => {
+    const data = await import(`@/data/1_food/questionsList.ts`);
+    questions.value = data.default;
 })
 
 function handleClick(question) {
     router.push({
         name: 'question',
         params: {
-            theme_id: question.theme_id ,
-            question_id: question.id ,
+            theme_id: theme_id,
+            question_id: question.id,
         }
     })
 }
@@ -44,7 +46,6 @@ function handleClick(question) {
 .question {
 
     &__img {
-        aspect-ratio: 5/1;
         width: 100%;
         border-radius: 8px;
         margin-bottom: 4px;
@@ -55,6 +56,7 @@ function handleClick(question) {
         padding: 8px;
         text-align: center;
         background: #333;
+        height: 60px;
     }
     &__title {
 
