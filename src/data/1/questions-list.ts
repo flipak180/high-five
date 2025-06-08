@@ -1,9 +1,9 @@
 export default [
-    { id: 1, title: 'Сладость' },
+    { id: 1, title: 'Сладости' },
     { id: 2, title: 'Кухни мира' },
-    { id: 3, title: 'Гарнир' },
+    { id: 3, title: 'Гарниры' },
     { id: 4, title: 'Овощи' },
-    { id: 5, title: 'Завтрак' },
+    { id: 5, title: 'На завтрак' },
     { id: 6, title: 'Напитки' },
     { id: 7, title: 'Вредная еда' },
     { id: 8, title: 'Нельзя на ночь' },

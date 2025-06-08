@@ -4,12 +4,13 @@ import router from "@/router";
 import themesList from "@/data/themes-list";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import TheCard from "@/components/TheCard.vue";
+import {Theme} from "@/interfaces";
 
-function handleClick(theme) {
+function handleClick(theme: Theme) {
     router.push({ name: 'theme', params: { id: theme.id } })
 }
 
-function getStyleObject(theme) {
+function getStyleObject(theme: Theme) {
     return {
         height: theme.progress + '%',
         backgroundColor: theme.color
@@ -19,15 +20,16 @@ function getStyleObject(theme) {
 
 <template>
     <ion-page>
-        <ion-header>
+        <ion-header :translucent="true">
             <ion-toolbar>
                 <ion-title>Выбор темы</ion-title>
             </ion-toolbar>
         </ion-header>
         <ion-content :fullscreen="true" class="ion-padding">
             <div class="themes">
-                <the-card class="theme" v-for="theme in themesList" :key="theme.id" @click="handleClick(theme)">
-                    <div class="theme__bg" :style="getStyleObject(theme)"></div>
+                <the-card button class="theme" v-for="theme in themesList" :key="theme.id" @click="handleClick(theme)">
+                    <div class="theme__bg" :style="{backgroundColor: theme.color}"></div>
+                    <div class="theme__progress" :style="getStyleObject(theme)"></div>
                     <div class="theme__content">
                         <FontAwesomeIcon class="theme__icon" :icon="theme.icon" />
                         <div class="theme__title">{{ theme.title }}</div>
@@ -55,10 +57,19 @@ function getStyleObject(theme) {
         &__bg {
             position: absolute;
             width: 100%;
+            height: 100%;
             bottom: 0;
             left: 0;
-            background-color: lightgreen;
             z-index: 2;
+            opacity: .25;
+        }
+
+        &__progress {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            z-index: 3;
         }
 
         &__content {
@@ -67,7 +78,7 @@ function getStyleObject(theme) {
             height: 100%;
             top: 0;
             left: 0;
-            z-index: 3;
+            z-index: 4;
             display: flex;
             flex-direction: column;
             justify-content: center;

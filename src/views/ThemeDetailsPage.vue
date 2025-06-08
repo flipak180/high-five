@@ -6,6 +6,7 @@ import router from "@/router";
 import TheCard from "@/components/TheCard.vue";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import {faLock} from "@fortawesome/free-solid-svg-icons";
+import {Question} from "@/interfaces";
 
 const route = useRoute();
 const theme_id = +route.params.id;
@@ -16,7 +17,11 @@ onMounted(async () => {
     questions.value = data.default;
 })
 
-function handleClick(question) {
+function handleClick(question: Question) {
+    if (question.id !== 1) {
+        return;
+    }
+
     router.push({
         name: 'question',
         params: {
@@ -34,12 +39,12 @@ function handleClick(question) {
                 <ion-buttons slot="start">
                     <ion-back-button text="Назад"></ion-back-button>
                 </ion-buttons>
-                <ion-title>Выбор вопроса</ion-title>
+                <ion-title>Выбор уровня</ion-title>
             </ion-toolbar>
         </ion-header>
         <ion-content :fullscreen="true" class="ion-padding">
             <div class="questions">
-                <the-card class="question" v-for="question in questions" :key="question.id" @click="handleClick(question)">
+                <the-card class="question" :button="question.id === 1" v-for="question in questions" :key="question.id" @click="handleClick(question)">
                     <div class="question__img">
                         <div class="question__title" v-if="question.id === 1">{{ question.title }}</div>
                         <div class="question__title" v-else>
@@ -59,6 +64,11 @@ function handleClick(question) {
     gap: 8px;
 }
 .question {
+    opacity: .7;
+
+    &.button {
+        opacity: 1;
+    }
 
     &__img {
         width: 100%;
