@@ -1,9 +1,16 @@
 <script setup lang="ts">
-import {onMounted, Ref, ref, useTemplateRef} from "vue";
+import {computed, onMounted, Ref, ref, useTemplateRef} from "vue";
 import {IonIcon} from '@ionic/vue';
 import {send} from "ionicons/icons";
 import {Haptics, NotificationType} from "@capacitor/haptics";
-import helpers from "@/helpers";
+import {useRoute} from "vue-router";
+import questionsList from "@/data/questionsList";
+
+const route = useRoute();
+const themeId = +route.params.id;
+const question = computed(() => {
+    return questionsList.find(question => question.theme_id === themeId)
+})
 
 const autofocus: Ref = useTemplateRef('autofocus');
 const answer = ref('')
@@ -35,41 +42,11 @@ function setFocus() {
 <template>
     <div class="question">
         <div class="question__grid ion-padding ion-margin-bottom">
-            <div class="answer" :style="{backgroundColor: helpers.getRandomColor()}">
-                <div class="answer__percent">10%</div>
-                <div class="answer__text" v-show="false">Печенье</div>
-            </div>
-            <div class="answer" :style="{backgroundColor: helpers.getRandomColor()}">
-                <div class="answer__percent">50%</div>
-                <div class="answer__text" v-show="false">Мороженое</div>
-            </div>
-            <div class="answer" :style="{backgroundColor: helpers.getRandomColor()}">
-                <div class="answer__percent">3%</div>
-                <div class="answer__text" v-show="false">Кукурузные палочки</div>
-            </div>
-            <div class="answer" :style="{backgroundColor: helpers.getRandomColor()}">
-                <div class="answer__percent">12%</div>
-                <div class="answer__text" v-show="false">Буше</div>
-            </div>
-            <div class="answer opened" :style="{backgroundColor: helpers.getRandomColor()}">
-                <div class="answer__percent">3%</div>
-                <div class="answer__text" v-show="true">Шоколадный батончик</div>
-            </div>
-            <div class="answer" :style="{backgroundColor: helpers.getRandomColor()}">
-                <div class="answer__percent">1%</div>
-                <div class="answer__text" v-show="false">Мармелад</div>
-            </div>
-            <div class="answer" :style="{backgroundColor: helpers.getRandomColor()}">
-                <div class="answer__percent">21%</div>
-                <div class="answer__text" v-show="false">Пирожное</div>
-            </div>
-            <div class="answer opened" :style="{backgroundColor: helpers.getRandomColor()}">
-                <div class="answer__percent">16%</div>
-                <div class="answer__text" v-show="true">Торт</div>
-            </div>
-            <div class="answer" :style="{backgroundColor: helpers.getRandomColor()}">
-                <div class="answer__percent">32%</div>
-                <div class="answer__text" v-show="false">Зефир</div>
+            <div class="answer" v-for="answer in question?.answers" :key="answer.id" :class="{ opened: answer.opened }">
+                <div class="answer__content">
+                    <div class="answer__text">{{ answer.text }}</div>
+                    <div class="answer__percent">{{ answer.percent }}</div>
+                </div>
             </div>
         </div>
         <form :class="{shake: error}" @submit.prevent="submitAnswer">
@@ -86,11 +63,8 @@ function setFocus() {
 
     &__grid {
         display: grid;
-        grid-template-columns: repeat(4, 150px);
-        grid-gap: 4px;
-        grid-auto-flow: row dense;
-        text-align: center;
-        overflow-x: scroll;
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 }
 
@@ -130,48 +104,30 @@ form {
 }
 
 .answer {
-    padding: 40px;
-    border: 1px solid black;
+    background: #333;
     border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    background: violet;
-    width: 150px;
-    height: 150px;
-    font-size: 24px;
+    font-size: 18px;
+    height: 60px;
+    padding: 10px 15px;
+
+    &__content {
+        opacity: 0;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    &.opened &__content {
+        opacity: 1;
+    }
 
     &__percent {
-        border: 5px solid #fff;
-        padding: 5px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        border-radius: 50%;
-        width: 75px;
-        height: 75px;
-        min-width: 75px;
-        min-height: 75px;
+        padding: 10px;
     }
 
     &__text {
         font-size: 18px;
-    }
-
-    &.opened {
-        font-size: 18px;
-    }
-
-    &.opened &__percent {
-        border: 3px solid #fff;
-        padding: 3px;
-        width: 50px;
-        height: 50px;
-        min-width: 50px;
-        min-height: 50px;
+        flex-grow: 1;
     }
 }
 

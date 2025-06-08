@@ -1,22 +1,24 @@
 <script setup lang="ts">
-import helpers from "@/helpers";
-import TheCard from "@/components/TheCard.vue";
-import router from "@/router";
 
-const questions = [
-    'Вкусная сладость',
-    'Лучший гарнир',
-    'Блюда русской кухни',
-    'Очень длинный текст для какого-то вопроса',
-];
+import {useRoute} from "vue-router";
+import {computed} from "vue";
+import questionsList from "@/data/questionsList";
+import router from "@/router";
+import TheCard from "@/components/TheCard.vue";
+
+const route = useRoute();
+const themeId = +route.params.id;
+const questions = computed(() => {
+    return questionsList.filter(question => question.theme_id === themeId)
+})
 </script>
 
 <template>
     <div class="questions">
-        <the-card class="question" v-for="question in questions" :key="question" @click="router.push({ name: 'question', params: { id: 1 } })">
-            <div class="question__img" :style="{backgroundColor: helpers.getRandomColor()}">
+        <the-card class="question" v-for="question in questions" :key="question.id" @click="router.push({ name: 'question', params: { id: question.id } })">
+            <div class="question__img">
                 <div class="question__title">
-                    {{ question }}
+                    {{ question.title }}
                 </div>
             </div>
         </the-card>
@@ -42,6 +44,7 @@ const questions = [
         font-size: 18px;
         padding: 8px;
         text-align: center;
+        background: #333;
     }
     &__title {
 
