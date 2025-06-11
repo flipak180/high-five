@@ -5,6 +5,7 @@ import {onMounted, Ref, ref, useTemplateRef} from "vue";
 import {Haptics, NotificationType} from "@capacitor/haptics";
 import {send} from "ionicons/icons";
 import {Question} from "@/misc/interfaces";
+import {useProgressStore} from "@/misc/progress";
 
 const route = useRoute();
 const theme_id = +route.params.theme_id;
@@ -13,6 +14,7 @@ const question = ref<Question>()
 
 const autofocus: Ref = useTemplateRef('autofocus');
 const userAnswer = ref('')
+const progressStore = useProgressStore()
 const error = ref<boolean>(false)
 const opened = ref<number[]>([])
 
@@ -32,6 +34,14 @@ async function submitAnswer() {
         .find(answer => [answer.text, ...answer.synonyms].map(answer => answer.toLowerCase()).includes(userAnswer.value.toLowerCase()));
     if (existedAnswer) {
         console.log(existedAnswer);
+        // if (theme_id in progressStore.progress && question_id in progressStore.progress[theme_id]) {
+        //     progressStore.progress[theme_id][question_id].push(existedAnswer.id)
+        // } else {
+        //     progressStore.progress[theme_id] = {
+        //         question_id: [existedAnswer.id],
+        //     };
+        // }
+
         opened.value.push(existedAnswer.id)
     } else {
         error.value = true;
@@ -42,6 +52,9 @@ async function submitAnswer() {
 }
 
 function setFocus() {
+    if (!autofocus.value) {
+        return;
+    }
     autofocus.value.focus()
 }
 </script>
@@ -127,7 +140,7 @@ form {
     background: #333;
     border-radius: 8px;
     font-size: 18px;
-    height: 60px;
+    //height: 60px;
     padding: 10px 15px;
 
     &__content {

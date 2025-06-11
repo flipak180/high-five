@@ -35,14 +35,20 @@ import './theme/global.scss';
 import router from "@/misc/router";
 import {createPinia} from "pinia";
 import {piniaCapacitorPersist} from "pinia-plugin-capacitor-persist";
+import {useProgressStore} from "@/misc/progress";
 
-const pinia = createPinia()
-pinia.use(piniaCapacitorPersist);
 
 const app = createApp(App)
     .use(IonicVue)
-    .use(router)
-    .use(pinia);
+    .use(router);
+
+// store
+const pinia = createPinia()
+pinia.use(piniaCapacitorPersist);
+app.use(pinia);
+
+const progressStore = useProgressStore()
+await progressStore.restored;
 
 router.isReady().then(() => {
     app.mount('#app');
