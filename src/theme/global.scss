@@ -1,7 +1,65 @@
-ion-header {
+.grow { flex-grow: 1; }
+.upper { text-transform: uppercase; }
+.nowrap {white-space: nowrap;text-overflow: ellipsis;}
 
-	ion-toolbar {
-		--border-color: #000;
-		--background: #000;
-	}
+.avatar {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	object-fit: cover;
 }
+
+.datetime-size-fixed:not(.datetime-prefer-wheel){
+	max-width: 400px;
+}
+
+ol {
+	margin: 0;
+	padding: 0;
+}
+
+ion-toast {
+	--border-radius: 8px;
+}
+
+.weight-medium { font-weight: 500; }
+.weight-semibold { font-weight: 600; }
+.weight-bold { font-weight: 700; }
+
+.size-sm { font-size: 12px; line-height: 16px; }
+.size-md { font-size: var(--font-size); line-height: var(--line-height); }
+.size-lg { font-size: 16px; line-height: 20px;}
+
+.color-black { color: var(--black_main) }
+.color-white { color: var(--white_main); }
+.color-grey { color: var(--grey_text); }
+.color-gray { color: var(--grey_icon); }
+.color-red { color: var(--red_deep); }
+.color-yellow { color: var(--yellow_deep); }
+.color-green { color: var(--green_deep); }
+.color-blue { color: var(--blue_text); }
+
+.justify-start { justify-content: start; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: end; }
+.justify-between { justify-content: space-between; }
+
+.align-start { align-items: start; }
+.align-center { align-items: center; }
+.align-end { align-items: end; }
+
+.icon-grey { --icon-color: var(--grey_icon); }
+.icon-blue { --icon-color: var(--blue_light); }
+.icon-red { --icon-color: var(--red_deep); }
+.icon-yellow { --icon-color: var(--yellow_deep); }
+.icon-green { --icon-color: var(--green_deep); }
+.icon-black { --icon-color: var(--black_main); }
+.icon-white { --icon-color: var(--white_main); }
+
+.bg-red { background: var(--red_deep); color: var(--white_main); }
+.bg-yellow { background: var(--yellow_deep); color: var(--white_main); }
+.bg-green { background: var(--green_deep); color: var(--white_main); }
+.bg-grey { background: var(--grey_icon); color: var(--white_main); }
+.bg-black { background: var(--black_main); color: var(--white_main); }
+.bg-white { background: var(--white_main); color: var(--grey_icon); }
+.bg-blue { background: var(--blue_text); color: var(--white_main); }

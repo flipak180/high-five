@@ -27,29 +27,30 @@ import '@ionic/vue/css/display.css';
  */
 /* @import '@ionic/vue/css/palettes/dark.always.css'; */
 /* @import '@ionic/vue/css/palettes/dark.class.css'; */
-import '@ionic/vue/css/palettes/dark.system.css';
-
+// import '@ionic/vue/css/palettes/dark.system.css';
 /* Theme variables */
 import './theme/variables.scss';
 import './theme/global.scss';
+import './theme/components/ion-progress-bar.scss';
 import router from "@/misc/router";
 import {createPinia} from "pinia";
 import {piniaCapacitorPersist} from "pinia-plugin-capacitor-persist";
 import {useProgressStore} from "@/misc/progress";
 
-
-const app = createApp(App)
-    .use(IonicVue)
-    .use(router);
+(async function() {
+    const app = createApp(App)
+        .use(IonicVue)
+        .use(router);
 
 // store
-const pinia = createPinia()
-pinia.use(piniaCapacitorPersist);
-app.use(pinia);
+    const pinia = createPinia()
+    pinia.use(piniaCapacitorPersist);
+    app.use(pinia);
 
-const progressStore = useProgressStore()
-await progressStore.restored;
+    const progressStore = useProgressStore()
+    await progressStore.restored;
 
-router.isReady().then(() => {
-    app.mount('#app');
-});
+    router.isReady().then(() => {
+        app.mount('#app');
+    });
+})()

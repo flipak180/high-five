@@ -1,20 +1,15 @@
 <script setup lang="ts">
-import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/vue';
+import {IonContent, IonHeader, IonPage, IonProgressBar, IonTitle, IonToolbar} from '@ionic/vue';
 import themesList from "@/data/themes-list";
-import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import TheCard from "@/components/TheCard.vue";
 import {Theme} from "@/misc/interfaces";
 import router from "@/misc/router";
+import TheText from "@/components/TheText.vue";
+import helpers from "@/misc/helpers";
+import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
 function handleClick(theme: Theme) {
     router.push({ name: 'theme', params: { id: theme.id } })
-}
-
-function getStyleObject(theme: Theme) {
-    return {
-        height: theme.progress + '%',
-        backgroundColor: theme.color
-    }
 }
 </script>
 
@@ -27,13 +22,12 @@ function getStyleObject(theme: Theme) {
         </ion-header>
         <ion-content :fullscreen="true" class="ion-padding">
             <div class="themes">
-                <the-card button class="theme" v-for="theme in themesList" :key="theme.id" @click="handleClick(theme)">
-                    <div class="theme__bg" :style="{backgroundColor: theme.color}"></div>
-                    <div class="theme__progress" :style="getStyleObject(theme)"></div>
-                    <div class="theme__content">
-                        <FontAwesomeIcon class="theme__icon" :icon="theme.icon" />
-                        <div class="theme__title">{{ theme.title }}</div>
-                    </div>
+                <the-card button class="theme" v-for="theme in themesList" :key="theme.id" @click="handleClick(theme)"
+                    :style="{backgroundColor: helpers.getColor(theme.id)}">
+                    <FontAwesomeIcon class="icon" :icon="theme.icon" />
+                    <the-text type="h2">{{ theme.title }}</the-text>
+                    <the-text type="b">15/15</the-text>
+                    <ion-progress-bar :value="theme.progress / 100"></ion-progress-bar>
                 </the-card>
             </div>
         </ion-content>
@@ -41,56 +35,35 @@ function getStyleObject(theme: Theme) {
 </template>
 
 <style lang="scss" scoped>
+ion-header {
+
+    ion-toolbar {
+        --border-color: #7209b7;
+        --background: #7209b7;
+    }
+}
 .themes {
+    //display: flex;
+    //flex-direction: column;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
 
     .theme {
-        background: #333;
-        aspect-ratio: 1/1;
         border-radius: 8px;
-        margin-bottom: 4px;
-        position: relative;
-        overflow: hidden;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        justify-content: center;
+        text-align: center;
 
-        &__bg {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            bottom: 0;
-            left: 0;
-            z-index: 2;
-            opacity: .25;
-        }
-
-        &__progress {
-            position: absolute;
-            width: 100%;
-            bottom: 0;
-            left: 0;
-            z-index: 3;
-        }
-
-        &__content {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 4;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 16px;
-        }
-
-        &__icon {
+        .icon {
             font-size: 36px;
         }
-        &__title {
-            font-size: 18px;
+
+        ion-progress-bar {
+            height: 4px;
         }
     }
 }

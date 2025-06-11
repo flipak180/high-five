@@ -13,10 +13,12 @@ http://ionicframework.com/docs/theming/ */
 	font-size: 16px;
 
 	--black: #000;
+	--white: #fff;
 	--grey: #333;
 
 	--ion-font-family: 'Rubik';
-	--background: var(--black);
-	--ion-background-color: var(--black);
+	--ion-text-color: var(--white);
+	--background: var(--white);
+	--ion-background-color: var(--white);
 }
 

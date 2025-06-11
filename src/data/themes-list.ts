@@ -25,8 +25,8 @@ export default [
     { id: 8, title: 'Автомобили', icon: faCar, progress: helpers.getRandomNumber(0, 100), color: helpers.getRandomColor() },
     { id: 9, title: 'Литература', icon: faBook, progress: helpers.getRandomNumber(0, 100), color: helpers.getRandomColor() },
     { id: 10, title: 'Музыка', icon: faMusic, progress: helpers.getRandomNumber(0, 100), color: helpers.getRandomColor() },
-    { id: 10, title: 'Кино', icon: faFilm, progress: helpers.getRandomNumber(0, 100), color: helpers.getRandomColor() },
-    { id: 10, title: 'Живопись', icon: faPalette, progress: helpers.getRandomNumber(0, 100), color: helpers.getRandomColor() },
+    { id: 11, title: 'Кино', icon: faFilm, progress: helpers.getRandomNumber(0, 100), color: helpers.getRandomColor() },
+    { id: 12, title: 'Живопись', icon: faPalette, progress: helpers.getRandomNumber(0, 100), color: helpers.getRandomColor() },
 ]
 
 
