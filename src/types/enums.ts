@@ -42,4 +42,5 @@ export enum TextTypes {
     'h3',
     'p',
     'b',
+    'small',
 }

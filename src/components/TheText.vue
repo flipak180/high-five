@@ -37,4 +37,5 @@ defineProps({
 .text-type-h3 { font-size: 18px; line-height: 22px; font-weight: 500; }
 .text-type-b { font-size: 16px; line-height: 20px; font-weight: 500; }
 .text-type-p { font-size: 16px; line-height: 20px; font-weight: 400; }
+.text-type-small { font-size: 14px; line-height: 18px; font-weight: 400; }
 </style>

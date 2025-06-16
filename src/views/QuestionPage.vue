@@ -6,6 +6,7 @@ import {Haptics, NotificationType} from "@capacitor/haptics";
 import {send} from "ionicons/icons";
 import {Question} from "@/misc/interfaces";
 import {useProgressStore} from "@/misc/progress";
+import helpers from "@/misc/helpers";
 
 const route = useRoute();
 const theme_id = +route.params.theme_id;
@@ -57,12 +58,17 @@ function setFocus() {
     }
     autofocus.value.focus()
 }
+
+const toolbarStyles = {
+    '--border-color': helpers.getColor(theme_id),
+    '--background': helpers.getColor(theme_id),
+}
 </script>
 
 <template>
     <ion-page>
         <ion-header>
-            <ion-toolbar>
+            <ion-toolbar :style="toolbarStyles">
                 <ion-buttons slot="start">
                     <ion-back-button text="Назад"></ion-back-button>
                 </ion-buttons>
@@ -91,6 +97,9 @@ function setFocus() {
 </template>
 
 <style lang="scss" scoped>
+ion-back-button {
+    --color: #fff;
+}
 .question {
 
     &__grid {
@@ -106,10 +115,11 @@ form {
     left: 0;
     width: 100%;
     padding: 10px;
-    background: #000;
+    background: #ccc;
 
     input {
-        background: var(--grey);
+        //background: rgba(0, 0, 0, .3);
+        background: rgba(249, 65, 68, 0.5);
         border-radius: 4px;
         padding: 10px;
         outline: none;
@@ -137,7 +147,7 @@ form {
 }
 
 .answer {
-    background: #333;
+    background: #ccc;
     border-radius: 8px;
     font-size: 18px;
     //height: 60px;
