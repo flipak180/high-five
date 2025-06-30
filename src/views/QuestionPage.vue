@@ -76,12 +76,15 @@ const toolbarStyles = {
                 <ion-title>Вкусная сладость</ion-title>
             </ion-toolbar>
         </ion-header>
-        <ion-content :fullscreen="true">
-            <div class="answers ion-padding ion-margin-vertical">
+        <ion-content :fullscreen="true" class="ion-padding">
+            <div class="answers">
                 <div class="answer" v-for="answer in question?.answers" :key="answer.id" :class="{ opened: opened.includes(answer.id) }">
                     <div class="answer__text">{{ answer.text }}</div>
                     <div class="answer__percent" :style="{backgroundColor: helpers.getColor(theme_id)}">
-                        {{ answer.percent }} <span>%</span>
+                        <div>
+                            <span>{{ answer.percent }}</span>
+                            <small>%</small>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -103,13 +106,13 @@ ion-back-button {
 .answers {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--ion-padding);
-    max-width: 450px;
+    gap: 8px;
+    max-width: 400px;
     margin: 0 auto;
 
     .answer {
         width: 100%;
-        height: 45px;
+        aspect-ratio: 8 / 1;
         position: relative;
         border-radius: 8px;
         display: flex;
@@ -123,17 +126,17 @@ ion-back-button {
             position: absolute;
             left: 0;
             top: 0;
-            width: 45px;
-            height: 45px;
+            height: 100%;
+            aspect-ratio: 1 / 1;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            font-size: 14px;
+            font-size: 16px;
             border-radius: 8px;
 
-            span {
-                font-size: 10px;
+            small {
+                font-size: 12px;
             }
         }
 
@@ -150,8 +153,8 @@ ion-back-button {
     position: fixed;
     bottom: var(--ion-safe-area-bottom, 0);
     left: 0;
-    margin: var(--ion-padding);
-    width: calc(100% - 2 * var(--ion-padding));
+    margin: 16px;
+    width: calc(100% - 32px);
 
     &__input {
         background: var(--grey-light);

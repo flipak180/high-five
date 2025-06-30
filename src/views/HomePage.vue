@@ -4,7 +4,6 @@ import themesList from "@/data/themes-list";
 import TheCard from "@/components/TheCard.vue";
 import {Theme} from "@/misc/interfaces";
 import router from "@/misc/router";
-import TheText from "@/components/TheText.vue";
 import helpers from "@/misc/helpers";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
@@ -24,12 +23,12 @@ function handleClick(theme: Theme) {
             <div class="themes">
                 <the-card button class="theme" v-for="theme in themesList" :key="theme.id" @click="handleClick(theme)"
                     :style="{backgroundColor: helpers.getColor(theme.id)}">
-                    <div class="theme__title">
+                    <div class="theme__top">
                         <FontAwesomeIcon class="theme__icon" :icon="theme.icon" />
-                        <the-text type="h2">{{ theme.title }}</the-text>
+                        <span class="theme__title">{{ theme.title }}</span>
                     </div>
-                    <div class="theme__progress">
-                        <the-text type="b">15/15</the-text>
+                    <div class="theme__bottom">
+                        <span class="theme__progress">15/15</span>
                         <ion-progress-bar :value="theme.progress / 100"></ion-progress-bar>
                     </div>
                 </the-card>
@@ -51,7 +50,7 @@ ion-header {
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     gap: 16px;
-    max-width: 356px;
+    max-width: 400px;
     margin: 0 auto;
 
     .theme {
@@ -64,7 +63,7 @@ ion-header {
         justify-content: space-between;
         text-align: center;
 
-        &__title {
+        &__top, &__bottom {
             display: flex;
             flex-direction: column;
             gap: 16px;
@@ -74,14 +73,18 @@ ion-header {
             font-size: 36px;
         }
 
+        &__title {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
         &__progress {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+            font-weight: 500;
         }
 
         ion-progress-bar {
             height: 4px;
+            --color: var(--black)
         }
     }
 }
