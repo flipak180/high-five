@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import {IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar} from '@ionic/vue';
+import {IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/vue';
 import {useRoute} from "vue-router";
 import {onMounted, Ref, ref, useTemplateRef} from "vue";
 import {Haptics, NotificationType} from "@capacitor/haptics";
-import {send} from "ionicons/icons";
 import {Question} from "@/misc/interfaces";
 import {useProgressStore} from "@/misc/progress";
 import helpers from "@/misc/helpers";
+import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
 
 const route = useRoute();
 const theme_id = +route.params.theme_id;
@@ -76,22 +77,21 @@ const toolbarStyles = {
             </ion-toolbar>
         </ion-header>
         <ion-content :fullscreen="true">
-            <div class="question">
-                <div class="question__grid ion-padding ion-margin-bottom">
-                    <div class="answer" v-for="answer in question?.answers" :key="answer.id" :class="{ opened: opened.includes(answer.id) }">
-                        <div class="answer__content">
-                            <div class="answer__text">{{ answer.text }}</div>
-                            <div class="answer__percent">{{ answer.percent }}</div>
-                        </div>
+            <div class="answers ion-padding ion-margin-vertical">
+                <div class="answer" v-for="answer in question?.answers" :key="answer.id" :class="{ opened: opened.includes(answer.id) }">
+                    <div class="answer__text">{{ answer.text }}</div>
+                    <div class="answer__percent" :style="{backgroundColor: helpers.getColor(theme_id)}">
+                        {{ answer.percent }} <span>%</span>
                     </div>
                 </div>
-                <form :class="{shake: error}" @submit.prevent="submitAnswer">
-                    <input v-model="userAnswer" type="text" inputmode="text" aria-label="Ответ" ref="autofocus" @blur="setFocus">
-                    <div class="button" @click="submitAnswer">
-                        <ion-icon slot="icon-only" :icon="send"></ion-icon>
-                    </div>
-                </form>
             </div>
+            <form class="form" @submit.prevent="submitAnswer">
+                <input v-model="userAnswer" type="text" inputmode="text" aria-label="Ответ" ref="autofocus"
+                       @blur="setFocus" id="user_answer" class="form__input" placeholder="Введите слово...">
+                <div class="form__button" @click="submitAnswer">
+                    <FontAwesomeIcon class="form__icon" :icon="faArrowRight" />
+                </div>
+            </form>
         </ion-content>
     </ion-page>
 </template>
@@ -100,97 +100,86 @@ const toolbarStyles = {
 ion-back-button {
     --color: #fff;
 }
-.question {
+.answers {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--ion-padding);
+    max-width: 450px;
+    margin: 0 auto;
 
-    &__grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 10px;
+    .answer {
+        width: 100%;
+        height: 45px;
+        position: relative;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: var(--grey-light);
+
+        &__percent {
+            color: var(--white);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 14px;
+            border-radius: 8px;
+
+            span {
+                font-size: 10px;
+            }
+        }
+
+        &__text {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--black);
+            text-align: center;
+        }
     }
 }
 
-form {
+.form {
     position: fixed;
     bottom: var(--ion-safe-area-bottom, 0);
     left: 0;
-    width: 100%;
-    padding: 10px;
-    background: #ccc;
+    margin: var(--ion-padding);
+    width: calc(100% - 2 * var(--ion-padding));
 
-    input {
-        //background: rgba(0, 0, 0, .3);
-        background: rgba(249, 65, 68, 0.5);
-        border-radius: 4px;
-        padding: 10px;
+    &__input {
+        background: var(--grey-light);
+        border-radius: 8px;
+        padding: 5px 10px;
         outline: none;
         border: none;
-        width: 100%;
         display: block;
         font-size: 16px;
+        width: 100%;
+        height: 40px;
+        color: var(--black);
     }
 
-    .button {
-        background: transparent;
-        padding: 6px;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        border-radius: 3px;
+    &__button {
         position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translate(0, -50%);
-        z-index: 5;
-        font-size: 24px;
-    }
-}
-
-.answer {
-    background: #ccc;
-    border-radius: 8px;
-    font-size: 18px;
-    //height: 60px;
-    padding: 10px 15px;
-
-    &__content {
-        opacity: 0;
+        right: 0;
+        top: 0;
+        margin: 4px;
+        background: var(--white);
         display: flex;
-        gap: 10px;
         align-items: center;
-    }
-
-    &.opened &__content {
-        opacity: 1;
-    }
-
-    &__percent {
-        padding: 10px;
-    }
-
-    &__text {
-        font-size: 18px;
-        flex-grow: 1;
-    }
-}
-
-.shake {
-    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    transform: translate3d(0, 0, 0);
-}
-
-@keyframes shake {
-    10%, 90% {
-        transform: translate3d(-1px, 0, 0);
-    }
-    20%, 80% {
-        transform: translate3d(2px, 0, 0);
-    }
-    30%, 50%, 70% {
-        transform: translate3d(-4px, 0, 0);
-    }
-    40%, 60% {
-        transform: translate3d(4px, 0, 0);
+        justify-content: center;
+        text-align: center;
+        border-radius: 8px;
+        height: calc(100% - 8px);
+        aspect-ratio: 1 / 1;
+        color: var(--black);
     }
 }
 </style>

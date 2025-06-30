@@ -1,23 +1,23 @@
 import {createRouter, createWebHistory} from '@ionic/vue-router';
 import {RouteRecordRaw} from 'vue-router';
-import ThemesPage from "@/views/ThemesPage.vue";
-import ThemeDetailsPage from "@/views/ThemeDetailsPage.vue";
 import QuestionPage from "@/views/QuestionPage.vue";
+import HomePage from "@/views/HomePage.vue";
+import ThemePage from "@/views/ThemePage.vue";
 
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
-        redirect: '/themes'
+        redirect: '/home'
     },
     {
-        path: '/themes',
-        name: 'themes',
-        component: ThemesPage
+        path: '/home',
+        name: 'home',
+        component: HomePage
     },
     {
         path: '/themes/:id',
         name: 'theme',
-        component: ThemeDetailsPage
+        component: ThemePage
     },
     {
         path: '/themes/:theme_id/question/:question_id',

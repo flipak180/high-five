@@ -24,10 +24,14 @@ function handleClick(theme: Theme) {
             <div class="themes">
                 <the-card button class="theme" v-for="theme in themesList" :key="theme.id" @click="handleClick(theme)"
                     :style="{backgroundColor: helpers.getColor(theme.id)}">
-                    <FontAwesomeIcon class="icon" :icon="theme.icon" />
-                    <the-text type="h2">{{ theme.title }}</the-text>
-                    <the-text type="b">15/15</the-text>
-                    <ion-progress-bar :value="theme.progress / 100"></ion-progress-bar>
+                    <div class="theme__title">
+                        <FontAwesomeIcon class="theme__icon" :icon="theme.icon" />
+                        <the-text type="h2">{{ theme.title }}</the-text>
+                    </div>
+                    <div class="theme__progress">
+                        <the-text type="b">15/15</the-text>
+                        <ion-progress-bar :value="theme.progress / 100"></ion-progress-bar>
+                    </div>
                 </the-card>
             </div>
         </ion-content>
@@ -43,23 +47,37 @@ ion-header {
     }
 }
 .themes {
-    //display: flex;
-    //flex-direction: column;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
     gap: 16px;
+    max-width: 356px;
+    margin: 0 auto;
 
     .theme {
+        aspect-ratio: 1/1;
         border-radius: 8px;
         padding: 16px;
         display: flex;
         flex-direction: column;
         gap: 16px;
-        justify-content: center;
+        justify-content: space-between;
         text-align: center;
 
-        .icon {
+        &__title {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        &__icon {
             font-size: 36px;
+        }
+
+        &__progress {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
 
         ion-progress-bar {

@@ -11,10 +11,12 @@ http://ionicframework.com/docs/theming/ */
 :root {
 	font-optical-sizing: auto;
 	font-size: 16px;
+	--ion-padding: 8px;
 
-	--black: #000;
+	--black: #333;
 	--white: #fff;
 	--grey: #333;
+	--grey-light: #D9D9D9;
 	--red: #ba2b2b;
 	--yellow: #ff9e19;
 	--green: #72b84e;
