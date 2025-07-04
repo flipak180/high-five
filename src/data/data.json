@@ -1,0 +1,232 @@
+{
+    "themes": [
+        {
+            "id": 1,
+            "title": "Кулинария",
+            "icon": "utensils"
+        },
+        {
+            "id": 2,
+            "title": "История",
+            "icon": "landmark"
+        },
+        {
+            "id": 3,
+            "title": "Наука",
+            "icon": "atom"
+        },
+        {
+            "id": 4,
+            "title": "Финансы",
+            "icon": "money-bill"
+        },
+        {
+            "id": 5,
+            "title": "Отношения",
+            "icon": "heart"
+        },
+        {
+            "id": 6,
+            "title": "География",
+            "icon": "map"
+        },
+        {
+            "id": 7,
+            "title": "Животные",
+            "icon": "paw"
+        },
+        {
+            "id": 8,
+            "title": "Автомобили",
+            "icon": "car"
+        },
+        {
+            "id": 9,
+            "title": "Литература",
+            "icon": "book"
+        },
+        {
+            "id": 10,
+            "title": "Музыка",
+            "icon": "music"
+        },
+        {
+            "id": 11,
+            "title": "Кино",
+            "icon": "film"
+        },
+        {
+            "id": 12,
+            "title": "Живопись",
+            "icon": "palette"
+        }
+    ],
+    "questions": [
+        {
+            "question": "Цитрус",
+            "answers": [
+                { "text": "Апельсин", "percentage": 40 },
+                { "text": "Мандарин", "percentage": 25 },
+                { "text": "Лимон", "percentage": 20 },
+                { "text": "Грейпфрут", "percentage": 7 },
+                { "text": "Лайм", "percentage": 5 },
+                { "text": "Помело", "percentage": 3 }
+            ]
+        },
+        {
+            "question": "Ингредиенты окрошки",
+            "answers": [
+                { "text": "Квас", "percentage": 30 },
+                { "text": "Картошка", "percentage": 20 },
+                { "text": "Яйцо", "percentage": 15 },
+                { "text": "Колбаса", "percentage": 15 },
+                { "text": "Зелень", "percentage": 10 },
+                { "text": "Кефир", "percentage": 10 }
+            ]
+        },
+        {
+            "question": "Это лежит в морозилке",
+            "answers": [
+                { "text": "Мороженое", "percentage": 30 },
+                { "text": "Пельмени", "percentage": 25 },
+                { "text": "Мясо", "percentage": 20 },
+                { "text": "Ягоды", "percentage": 10 },
+                { "text": "Овощи", "percentage": 10 },
+                { "text": "Рыба", "percentage": 5 }
+            ]
+        },
+        {
+            "question": "Сладости",
+            "answers": [
+                { "text": "Шоколад", "percentage": 30 },
+                { "text": "Конфеты", "percentage": 25 },
+                { "text": "Печенье", "percentage": 15 },
+                { "text": "Торт", "percentage": 10 },
+                { "text": "Мармелад", "percentage": 10 },
+                { "text": "Зефир", "percentage": 10 }
+            ]
+        },
+        {
+            "question": "Растёт на дереве",
+            "answers": [
+                { "text": "Яблоко", "percentage": 35 },
+                { "text": "Груша", "percentage": 25 },
+                { "text": "Вишня", "percentage": 15 },
+                { "text": "Слива", "percentage": 10 },
+                { "text": "Персик", "percentage": 10 },
+                { "text": "Апельсин", "percentage": 5 }
+            ]
+        },
+        {
+            "question": "Специи",
+            "answers": [
+                { "text": "Чёрный перец", "percentage": 38 },
+                { "text": "Лавровый лист", "percentage": 28 },
+                { "text": "Паприка", "percentage": 12 },
+                { "text": "Хмели-сунели", "percentage": 8 },
+                { "text": "Куркума", "percentage": 7 },
+                { "text": "Корица", "percentage": 7 }
+            ]
+        },
+        {
+            "question": "Фрукт с косточкой",
+            "answers": [
+                { "text": "Вишня", "percentage": 30 },
+                { "text": "Слива", "percentage": 25 },
+                { "text": "Абрикос", "percentage": 15 },
+                { "text": "Персик", "percentage": 12 },
+                { "text": "Манго", "percentage": 10 },
+                { "text": "Финик", "percentage": 8 }
+            ]
+        },
+        {
+            "question": "Виды масел",
+            "answers": [
+                { "text": "Подсолнечное", "percentage": 40 },
+                { "text": "Оливковое", "percentage": 25 },
+                { "text": "Сливочное", "percentage": 15 },
+                { "text": "Кукурузное", "percentage": 8 },
+                { "text": "Кокосовое", "percentage": 7 },
+                { "text": "Льняное", "percentage": 5 }
+            ]
+        },
+        {
+            "question": "Источник белка",
+            "answers": [
+                { "text": "Курица", "percentage": 30 },
+                { "text": "Мясо", "percentage": 25 },
+                { "text": "Яйца", "percentage": 15 },
+                { "text": "Рыба", "percentage": 12 },
+                { "text": "Творог", "percentage": 10 },
+                { "text": "Фасоль", "percentage": 8 }
+            ]
+        },
+        {
+            "question": "Блюда русской кухни",
+            "answers": [
+                { "text": "Борщ", "percentage": 28 },
+                { "text": "Пельмени", "percentage": 25 },
+                { "text": "Блины", "percentage": 15 },
+                { "text": "Окрошка", "percentage": 12 },
+                { "text": "Оливье", "percentage": 10 },
+                { "text": "Котлеты", "percentage": 10 }
+            ]
+        },
+        {
+            "question": "Растёт в земле",
+            "answers": [
+                { "text": "Картошка", "percentage": 35 },
+                { "text": "Морковь", "percentage": 25 },
+                { "text": "Свёкла", "percentage": 15 },
+                { "text": "Редис", "percentage": 10 },
+                { "text": "Лук", "percentage": 8 },
+                { "text": "Чеснок", "percentage": 7 }
+            ]
+        },
+        {
+            "question": "Салатная зелень",
+            "answers": [
+                { "text": "Укроп", "percentage": 30 },
+                { "text": "Петрушка", "percentage": 25 },
+                { "text": "Листовой салат", "percentage": 15 },
+                { "text": "Руккола", "percentage": 12 },
+                { "text": "Зелёный лук", "percentage": 10 },
+                { "text": "Шпинат", "percentage": 8 }
+            ]
+        },
+        {
+            "question": "Сорта сыров",
+            "answers": [
+                { "text": "Маасдам", "percentage": 25 },
+                { "text": "Эдам", "percentage": 20 },
+                { "text": "Бри", "percentage": 15 },
+                { "text": "Горгонзола", "percentage": 12 },
+                { "text": "Пармезан", "percentage": 15 },
+                { "text": "Камамбер", "percentage": 13 }
+            ]
+        },
+        {
+            "question": "Орехи",
+            "answers": [
+                { "text": "Грецкий", "percentage": 30 },
+                { "text": "Арахис", "percentage": 25 },
+                { "text": "Фундук", "percentage": 15 },
+                { "text": "Миндаль", "percentage": 12 },
+                { "text": "Кешью", "percentage": 10 },
+                { "text": "Фисташки", "percentage": 8 }
+            ]
+        },
+        {
+            "question": "Завтрак",
+            "answers": [
+                { "text": "Яичница", "percentage": 30 },
+                { "text": "Каша", "percentage": 20 },
+                { "text": "Бутерброд", "percentage": 15 },
+                { "text": "Мюсли", "percentage": 12 },
+                { "text": "Сырники", "percentage": 13 },
+                { "text": "Блины", "percentage": 10 }
+            ]
+        }
+
+    ]
+}
