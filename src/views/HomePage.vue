@@ -5,7 +5,7 @@ import TheCard from "@/components/TheCard.vue";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import {Question} from "@/misc/interfaces";
 import router from "@/misc/router";
-import {faCheck, faEllipsis, faLock, faLockOpen} from "@fortawesome/free-solid-svg-icons";
+import {faCheck, faEllipsis, faLock} from "@fortawesome/free-solid-svg-icons";
 import {QuestionStatuses} from "@/mappers/QuestionMapper";
 import format from "@/misc/format";
 import {useQuestionsStore} from "@/stores/questions";
@@ -41,7 +41,6 @@ function handleClick(question: Question) {
                 <the-card class="question" :class="'status-' + question.status" v-for="(question, i) in questions" :key="question.id" @click="handleClick(question)">
                     <span class="question__number">{{ format.levelIndex(i) }}</span>
                     <FontAwesomeIcon class="question__icon" :icon="faLock" v-if="question.status === QuestionStatuses.LOCKED" />
-                    <FontAwesomeIcon class="question__icon" :icon="faLockOpen" v-if="question.status === QuestionStatuses.UNLOCKED" />
                     <FontAwesomeIcon class="question__icon" :icon="faEllipsis" v-if="question.status === QuestionStatuses.IN_PROGRESS" />
                     <FontAwesomeIcon class="question__icon" :icon="faCheck" v-if="question.status === QuestionStatuses.DONE" />
                 </the-card>
@@ -66,18 +65,17 @@ ion-toolbar {
         aspect-ratio: 2/1;
         border-radius: 8px;
         padding: 16px;
-        background: var(--grey-light);
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        &.status-1 {
+        &.status-0 {
             background: var(--grey-light);
         }
-        &.status-2 {
+        &.status-1 {
             background: #FFD166;
         }
-        &.status-3 {
+        &.status-2 {
             background: #06D6A0;
         }
 
