@@ -12,6 +12,7 @@ export interface Question {
     id: number,
     title: string,
     status: number,
+    min_answers: number,
     opened: number[],
     answers: Answer[]
 }

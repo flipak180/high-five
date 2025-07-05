@@ -21,6 +21,8 @@ const userAnswer = ref('')
 const error = ref<boolean>(false)
 
 onMounted(async () => {
+    progressStore.create(question.value.id);
+
     setFocus()
     setTimeout(() => {
         setFocus()

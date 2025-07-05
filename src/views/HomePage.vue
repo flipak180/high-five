@@ -5,16 +5,19 @@ import TheCard from "@/components/TheCard.vue";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import {Question} from "@/misc/interfaces";
 import router from "@/misc/router";
-import {faCheck, faEllipsis, faLock} from "@fortawesome/free-solid-svg-icons";
+import {faCheck, faEllipsis, faLock, faLockOpen} from "@fortawesome/free-solid-svg-icons";
 import {QuestionStatuses} from "@/mappers/QuestionMapper";
 import format from "@/misc/format";
 import {useQuestionsStore} from "@/stores/questions";
+import {useProgressStore} from "@/stores/progress";
 
 const questions = ref<Question[]>([])
 const questionsStore = useQuestionsStore()
+const progressStore = useProgressStore()
 
 onMounted(async () => {
     questions.value = questionsStore.questions;
+    console.log(progressStore.totalAnswers);
 })
 
 function handleClick(question: Question) {
@@ -38,6 +41,7 @@ function handleClick(question: Question) {
                 <the-card class="question" :class="'status-' + question.status" v-for="(question, i) in questions" :key="question.id" @click="handleClick(question)">
                     <span class="question__number">{{ format.levelIndex(i) }}</span>
                     <FontAwesomeIcon class="question__icon" :icon="faLock" v-if="question.status === QuestionStatuses.LOCKED" />
+                    <FontAwesomeIcon class="question__icon" :icon="faLockOpen" v-if="question.status === QuestionStatuses.UNLOCKED" />
                     <FontAwesomeIcon class="question__icon" :icon="faEllipsis" v-if="question.status === QuestionStatuses.IN_PROGRESS" />
                     <FontAwesomeIcon class="question__icon" :icon="faCheck" v-if="question.status === QuestionStatuses.DONE" />
                 </the-card>
@@ -68,9 +72,12 @@ ion-toolbar {
         justify-content: space-between;
 
         &.status-1 {
-            background: #FFD166;
+            background: var(--grey-light);
         }
         &.status-2 {
+            background: #FFD166;
+        }
+        &.status-3 {
             background: #06D6A0;
         }
 

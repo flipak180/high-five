@@ -1,5 +1,5 @@
 import {defineStore} from "pinia";
-import {ref} from "vue";
+import {computed, ref} from "vue";
 
 export const useProgressStore = defineStore('progress', () => {
 
@@ -7,6 +7,12 @@ export const useProgressStore = defineStore('progress', () => {
         1: [1, 2, 3, 4, 5, 6],
         2: [1, 3, 4],
         3: [],
+    })
+
+    const totalAnswers = computed<number>(() => {
+        return Object.values(progress.value)
+            .map(item => item.length)
+            .reduce((a, b) => a + b, 0);
     })
 
     function add(questionId: number, answerNumber: number) {
@@ -17,9 +23,19 @@ export const useProgressStore = defineStore('progress', () => {
         }
     }
 
+    function create(questionId: number) {
+        if (questionId in progress.value) {
+            return;
+        }
+
+        progress.value[questionId] = [];
+    }
+
     return {
         progress,
         add,
+        create,
+        totalAnswers,
     }
 
 }, {
