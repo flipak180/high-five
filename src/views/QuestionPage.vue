@@ -1,29 +1,26 @@
 <script setup lang="ts">
 import {IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/vue';
 import {useRoute} from "vue-router";
-import {onMounted, Ref, ref, useTemplateRef} from "vue";
+import {computed, onMounted, Ref, ref, useTemplateRef} from "vue";
 import {Haptics, NotificationType} from "@capacitor/haptics";
-import {Question} from "@/misc/interfaces";
-import {useProgressStore} from "@/misc/progress";
-import helpers from "@/misc/helpers";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
+import {useQuestionsStore} from "@/stores/questions";
+import {Question} from "@/misc/interfaces";
+import {useProgressStore} from "@/stores/progress";
 
 const route = useRoute();
-const theme_id = +route.params.theme_id;
-const question_id = +route.params.question_id;
-const question = ref<Question>()
+const questionsStore = useQuestionsStore()
+const progressStore = useProgressStore()
+const question = computed<Question>(() => {
+    return questionsStore.questions.find(item => item.id === +route.params.id) || {};
+})
 
 const autofocus: Ref = useTemplateRef('autofocus');
 const userAnswer = ref('')
-const progressStore = useProgressStore()
 const error = ref<boolean>(false)
-const opened = ref<number[]>([])
 
 onMounted(async () => {
-    const data = await import(`@/data/${theme_id}/${question_id}.ts`);
-    question.value = data.default;
-
     setFocus()
     setTimeout(() => {
         setFocus()
@@ -32,19 +29,10 @@ onMounted(async () => {
 
 async function submitAnswer() {
     error.value = false;
-    const existedAnswer = question.value.answers
-        .find(answer => [answer.text, ...answer.synonyms].map(answer => answer.toLowerCase()).includes(userAnswer.value.toLowerCase()));
-    if (existedAnswer) {
-        console.log(existedAnswer);
-        // if (theme_id in progressStore.progress && question_id in progressStore.progress[theme_id]) {
-        //     progressStore.progress[theme_id][question_id].push(existedAnswer.id)
-        // } else {
-        //     progressStore.progress[theme_id] = {
-        //         question_id: [existedAnswer.id],
-        //     };
-        // }
-
-        opened.value.push(existedAnswer.id)
+    const answerIndex = question.value.answers
+        .findIndex(answer => [answer.text, ...answer.synonyms].map(answer => answer.toLowerCase()).includes(userAnswer.value.toLowerCase()));
+    if (answerIndex > -1) {
+        progressStore.add(question.value.id, answerIndex + 1);
     } else {
         error.value = true;
         await Haptics.notification({ type: NotificationType.Error });
@@ -59,30 +47,25 @@ function setFocus() {
     }
     autofocus.value.focus()
 }
-
-const toolbarStyles = {
-    '--border-color': helpers.getColor(theme_id),
-    '--background': helpers.getColor(theme_id),
-}
 </script>
 
 <template>
     <ion-page>
         <ion-header>
-            <ion-toolbar :style="toolbarStyles">
+            <ion-toolbar>
                 <ion-buttons slot="start">
                     <ion-back-button text="Назад"></ion-back-button>
                 </ion-buttons>
-                <ion-title>Вкусная сладость</ion-title>
+                <ion-title>{{ question.title }}</ion-title>
             </ion-toolbar>
         </ion-header>
         <ion-content :fullscreen="true" class="ion-padding">
             <div class="answers">
-                <div class="answer" v-for="answer in question?.answers" :key="answer.id" :class="{ opened: opened.includes(answer.id) }">
+                <div class="answer" v-for="(answer, i) in question?.answers" :key="answer.id" :class="{ opened: question.opened.includes(i + 1) }">
                     <div class="answer__text">{{ answer.text }}</div>
-                    <div class="answer__percent" :style="{backgroundColor: helpers.getColor(theme_id)}">
+                    <div class="answer__percent">
                         <div>
-                            <span>{{ answer.percent }}</span>
+                            <span>{{ answer.percentage }}</span>
                             <small>%</small>
                         </div>
                     </div>
@@ -100,6 +83,9 @@ const toolbarStyles = {
 </template>
 
 <style lang="scss" scoped>
+ion-toolbar {
+    --background: #EF476F;
+}
 ion-back-button {
     --color: #fff;
 }
@@ -122,6 +108,7 @@ ion-back-button {
         background: var(--grey-light);
 
         &__percent {
+            background-color: #EF476F;
             color: var(--white);
             position: absolute;
             left: 0;
@@ -145,6 +132,11 @@ ion-back-button {
             font-weight: 500;
             color: var(--black);
             text-align: center;
+            opacity: 0;
+        }
+
+        &.opened .answer__text {
+            opacity: 1;
         }
     }
 }

@@ -1,36 +1,45 @@
 <script setup lang="ts">
-import {IonContent, IonHeader, IonPage, IonProgressBar, IonTitle, IonToolbar} from '@ionic/vue';
-import themesList from "@/data/themes-list";
+import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/vue';
+import {onMounted, ref} from "vue";
 import TheCard from "@/components/TheCard.vue";
-import {Theme} from "@/misc/interfaces";
-import router from "@/misc/router";
-import helpers from "@/misc/helpers";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import {Question} from "@/misc/interfaces";
+import router from "@/misc/router";
+import {faCheck, faEllipsis, faLock} from "@fortawesome/free-solid-svg-icons";
+import {QuestionStatuses} from "@/mappers/QuestionMapper";
+import format from "@/misc/format";
+import {useQuestionsStore} from "@/stores/questions";
 
-function handleClick(theme: Theme) {
-    router.push({ name: 'theme', params: { id: theme.id } })
+const questions = ref<Question[]>([])
+const questionsStore = useQuestionsStore()
+
+onMounted(async () => {
+    questions.value = questionsStore.questions;
+})
+
+function handleClick(question: Question) {
+    if (question.status === QuestionStatuses.LOCKED) {
+        return;
+    }
+
+    router.push({name: 'question', params: {id: question.id}})
 }
 </script>
 
 <template>
     <ion-page>
-        <ion-header :translucent="true">
+        <ion-header>
             <ion-toolbar>
-                <ion-title>Выбор темы</ion-title>
+                <ion-title>Выбор уровня</ion-title>
             </ion-toolbar>
         </ion-header>
         <ion-content :fullscreen="true" class="ion-padding">
-            <div class="themes">
-                <the-card button class="theme" v-for="theme in themesList" :key="theme.id" @click="handleClick(theme)"
-                    :style="{backgroundColor: helpers.getColor(theme.id)}">
-                    <div class="theme__top">
-                        <FontAwesomeIcon class="theme__icon" :icon="theme.icon" />
-                        <span class="theme__title">{{ theme.title }}</span>
-                    </div>
-                    <div class="theme__bottom">
-                        <span class="theme__progress">15/15</span>
-                        <ion-progress-bar :value="theme.progress / 100"></ion-progress-bar>
-                    </div>
+            <div class="questions">
+                <the-card class="question" :class="'status-' + question.status" v-for="(question, i) in questions" :key="question.id" @click="handleClick(question)">
+                    <span class="question__number">{{ format.levelIndex(i) }}</span>
+                    <FontAwesomeIcon class="question__icon" :icon="faLock" v-if="question.status === QuestionStatuses.LOCKED" />
+                    <FontAwesomeIcon class="question__icon" :icon="faEllipsis" v-if="question.status === QuestionStatuses.IN_PROGRESS" />
+                    <FontAwesomeIcon class="question__icon" :icon="faCheck" v-if="question.status === QuestionStatuses.DONE" />
                 </the-card>
             </div>
         </ion-content>
@@ -38,53 +47,39 @@ function handleClick(theme: Theme) {
 </template>
 
 <style lang="scss" scoped>
-ion-header {
-
-    ion-toolbar {
-        --border-color: #7209b7;
-        --background: #7209b7;
-    }
+ion-toolbar {
+    --background: #EF476F;
 }
-.themes {
+.questions {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     gap: 16px;
-    max-width: 400px;
+    max-width: 256px;
     margin: 0 auto;
 
-    .theme {
-        aspect-ratio: 1/1;
+    .question {
+        aspect-ratio: 2/1;
         border-radius: 8px;
         padding: 16px;
+        background: var(--grey-light);
         display: flex;
-        flex-direction: column;
-        gap: 16px;
+        align-items: center;
         justify-content: space-between;
-        text-align: center;
 
-        &__top, &__bottom {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+        &.status-1 {
+            background: #FFD166;
+        }
+        &.status-2 {
+            background: #06D6A0;
+        }
+
+        &__number {
+            font-size: 20px;
         }
 
         &__icon {
-            font-size: 36px;
-        }
-
-        &__title {
-            font-size: 20px;
-            font-weight: 500;
-        }
-
-        &__progress {
-            font-weight: 500;
-        }
-
-        ion-progress-bar {
-            height: 4px;
-            --color: var(--black)
+            font-size: 24px;
         }
     }
 }

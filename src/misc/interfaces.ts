@@ -11,12 +11,14 @@ export interface Theme {
 export interface Question {
     id: number,
     title: string,
+    status: number,
+    opened: number[],
     answers: Answer[]
 }
 
 export interface Answer {
     id: number,
     text: string,
-    percent: string,
+    percentage: string,
     synonyms: string[]
 }

@@ -35,7 +35,9 @@ import './theme/components/ion-progress-bar.scss';
 import router from "@/misc/router";
 import {createPinia} from "pinia";
 import {piniaCapacitorPersist} from "pinia-plugin-capacitor-persist";
-import {useProgressStore} from "@/misc/progress";
+import {useQuestionsStore} from "@/stores/questions";
+import {useProgressStore} from "@/stores/progress";
+import {QuestionMapper} from "@/mappers/QuestionMapper";
 
 (async function() {
     const app = createApp(App)
@@ -49,6 +51,10 @@ import {useProgressStore} from "@/misc/progress";
 
     const progressStore = useProgressStore()
     await progressStore.restored;
+
+    const questionsStore = useQuestionsStore()
+    const questionsJson = await import(`@/data/questions.json`);
+    questionsStore.questions = questionsJson.default.map(QuestionMapper);
 
     router.isReady().then(() => {
         app.mount('#app');
