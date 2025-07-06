@@ -18,11 +18,11 @@
         "title": "Ингредиенты окрошки",
         "answers": [
             { "text": "Квас", "percentage": 30, "synonyms": [] },
-            { "text": "Картошка", "percentage": 20, "synonyms": [] },
-            { "text": "Яйцо", "percentage": 15, "synonyms": [] },
+            { "text": "Картошка", "percentage": 20, "synonyms": ["Картофель"] },
+            { "text": "Яйцо", "percentage": 15, "synonyms": ["Яйца"] },
             { "text": "Колбаса", "percentage": 15, "synonyms": [] },
-            { "text": "Зелень", "percentage": 10, "synonyms": [] },
-            { "text": "Кефир", "percentage": 10, "synonyms": [] }
+            { "text": "Огурец", "percentage": 10, "synonyms": ["Огурцы"] },
+            { "text": "Зелень", "percentage": 10, "synonyms": ["Укроп", "Петрушка", "Кинза", "Трава", "Салат"] }
         ]
     },
     {
@@ -32,8 +32,8 @@
         "answers": [
             { "text": "Мороженое", "percentage": 30, "synonyms": [] },
             { "text": "Пельмени", "percentage": 25, "synonyms": [] },
-            { "text": "Мясо", "percentage": 20, "synonyms": [] },
-            { "text": "Ягоды", "percentage": 10, "synonyms": [] },
+            { "text": "Мясо", "percentage": 20, "synonyms": ["Кура", "Курица", "Говядина", "Свинина"] },
+            { "text": "Ягоды", "percentage": 10, "synonyms": ["Брусника", "Клюква", "Клубника", "Малина"] },
             { "text": "Овощи", "percentage": 10, "synonyms": [] },
             { "text": "Рыба", "percentage": 5, "synonyms": [] }
         ]
