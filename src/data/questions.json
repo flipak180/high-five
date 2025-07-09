@@ -37,7 +37,7 @@
     },
     {
         "id": 4,
-        "min_answers": 9,
+        "min_answers": 12,
         "title": "Сладости",
         "answers": [
             { "text": "Шоколад", "percentage": 30, "synonyms": [] },
