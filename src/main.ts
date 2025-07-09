@@ -39,7 +39,7 @@ import {useQuestionsStore} from "@/stores/questions";
 import {useProgressStore} from "@/stores/progress";
 import {QuestionMapper} from "@/mappers/QuestionMapper";
 
-// npx @capacitor/assets generate --iconBackgroundColor '#43AA8B' --iconBackgroundColorDark '#43AA8B' --splashBackgroundColor '#43AA8B' --splashBackgroundColorDark '#43AA8B'
+// npx @capacitor/assets generate
 
 (async function() {
     const app = createApp(App)
