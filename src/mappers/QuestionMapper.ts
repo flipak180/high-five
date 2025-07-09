@@ -7,7 +7,8 @@ export enum QuestionStatuses {
     'DONE'
 }
 
-export function QuestionMapper(question: Question) {
+export function QuestionMapper(question: Question, index: number) {
+    question.min_answers = index * 3;
     return {
         ...question,
         status: getQuestionProgressStatus(question),

@@ -4,7 +4,7 @@ import {computed, ref} from "vue";
 export const useProgressStore = defineStore('progress', () => {
 
     // const progress = ref<{[key: number]: number[]}>({
-    //     1: [1, 2, 3, 4, 5, 6],
+    //     1: [1, 2, 3, 4, 5],
     //     2: [1, 3, 4],
     //     3: [],
     // })

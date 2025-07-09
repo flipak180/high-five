@@ -15,6 +15,10 @@ const progressStore = useProgressStore()
 const question = computed<Question>(() => {
     return questionsStore.questions.find(item => item.id === +route.params.id) || {};
 })
+const progress = computed<Question>(() => {
+    return progressStore.progress[question.value.id];
+})
+console.log(progress.value);
 
 const autofocus: Ref = useTemplateRef('autofocus');
 const userAnswer = ref('')

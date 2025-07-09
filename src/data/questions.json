@@ -1,7 +1,6 @@
 [
     {
         "id": 1,
-        "min_answers": 0,
         "title": "Цитрус",
         "answers": [
             { "text": "Апельсин", "percentage": 40, "synonyms": [] },
@@ -13,7 +12,6 @@
     },
     {
         "id": 2,
-        "min_answers": 4,
         "title": "Ингредиенты окрошки",
         "answers": [
             { "text": "Квас", "percentage": 30, "synonyms": [] },
@@ -25,7 +23,6 @@
     },
     {
         "id": 3,
-        "min_answers": 8,
         "title": "Это лежит в морозилке",
         "answers": [
             { "text": "Мороженое", "percentage": 30, "synonyms": [] },
@@ -37,7 +34,6 @@
     },
     {
         "id": 4,
-        "min_answers": 12,
         "title": "Сладости",
         "answers": [
             { "text": "Шоколад", "percentage": 30, "synonyms": [] },
@@ -49,7 +45,6 @@
     },
     {
         "id": 5,
-        "min_answers": 16,
         "title": "Растёт на дереве",
         "answers": [
             { "text": "Яблоко", "percentage": 35, "synonyms": [] },
@@ -61,7 +56,6 @@
     },
     {
         "id": 6,
-        "min_answers": 20,
         "title": "Специи",
         "answers": [
             { "text": "Чёрный перец", "percentage": 38, "synonyms": [] },
@@ -73,7 +67,6 @@
     },
     {
         "id": 7,
-        "min_answers": 24,
         "title": "Фрукт с косточкой",
         "answers": [
             { "text": "Вишня", "percentage": 30, "synonyms": [] },
@@ -85,7 +78,6 @@
     },
     {
         "id": 8,
-        "min_answers": 28,
         "title": "Виды масел",
         "answers": [
             { "text": "Подсолнечное", "percentage": 40, "synonyms": [] },
@@ -97,7 +89,6 @@
     },
     {
         "id": 9,
-        "min_answers": 32,
         "title": "Источник белка",
         "answers": [
             { "text": "Курица", "percentage": 30, "synonyms": [] },
@@ -109,7 +100,6 @@
     },
     {
         "id": 10,
-        "min_answers": 36,
         "title": "Блюда русской кухни",
         "answers": [
             { "text": "Борщ", "percentage": 28, "synonyms": [] },
@@ -121,7 +111,6 @@
     },
     {
         "id": 11,
-        "min_answers": 40,
         "title": "Растёт в земле",
         "answers": [
             { "text": "Картошка", "percentage": 35, "synonyms": [] },
@@ -133,7 +122,6 @@
     },
     {
         "id": 12,
-        "min_answers": 44,
         "title": "Салатная зелень",
         "answers": [
             { "text": "Укроп", "percentage": 30, "synonyms": [] },
@@ -145,7 +133,6 @@
     },
     {
         "id": 13,
-        "min_answers": 48,
         "title": "Сорта сыров",
         "answers": [
             { "text": "Маасдам", "percentage": 25, "synonyms": [] },
@@ -157,7 +144,6 @@
     },
     {
         "id": 14,
-        "min_answers": 52,
         "title": "Орехи",
         "answers": [
             { "text": "Арахис", "percentage": 25, "synonyms": [] },
@@ -169,7 +155,6 @@
     },
     {
         "id": 15,
-        "min_answers": 56,
         "title": "Завтрак",
         "answers": [
             { "text": "Яичница", "percentage": 30, "synonyms": [] },

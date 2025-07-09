@@ -17,7 +17,6 @@ const progressStore = useProgressStore()
 
 onMounted(async () => {
     questions.value = questionsStore.questions;
-    console.log(progressStore.totalAnswers);
 })
 
 function handleClick(question: Question) {
