@@ -14,6 +14,7 @@ export interface Question {
     status: number,
     min_answers: number,
     opened: number[],
+    icon: IconDefinition,
     answers: Answer[]
 }
 

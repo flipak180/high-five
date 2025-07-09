@@ -15,10 +15,9 @@ const progressStore = useProgressStore()
 const question = computed<Question>(() => {
     return questionsStore.questions.find(item => item.id === +route.params.id) || {};
 })
-const progress = computed<Question>(() => {
-    return progressStore.progress[question.value.id];
+const progress = computed<number[]>(() => {
+    return progressStore.progress[question.value.id] || [];
 })
-console.log(progress.value);
 
 const autofocus: Ref = useTemplateRef('autofocus');
 const userAnswer = ref('')
@@ -67,7 +66,7 @@ function setFocus() {
         </ion-header>
         <ion-content :fullscreen="true" class="ion-padding">
             <div class="answers">
-                <div class="answer" v-for="(answer, i) in question?.answers" :key="answer.id" :class="{ opened: question.opened.includes(i + 1) }">
+                <div class="answer" v-for="(answer, i) in question?.answers" :key="answer.id" :class="{ opened: progress.includes(i + 1) }">
                     <div class="answer__text">{{ answer.text }}</div>
                     <div class="answer__percent">
                         <div>
