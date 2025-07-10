@@ -1,123 +1,112 @@
 [
     {
         "id": 1,
-        "title": "Цитрус",
+        "title": "Что делает охранник на работе?",
         "answers": [
-            { "text": "Апельсин", "percentage": 40, "synonyms": [] },
-            { "text": "Лимон", "percentage": 30, "synonyms": [] },
-            { "text": "Мандарин", "percentage": 15, "synonyms": [] },
-            { "text": "Грейпфрут", "percentage": 10, "synonyms": [] },
-            { "text": "Лайм", "percentage": 5, "synonyms": [] }
+            { "title": "Спит", "percentage": 38, "synonyms": [] },
+            { "title": "Охраняет", "percentage": 26, "synonyms": [] },
+            { "title": "Работает", "percentage": 19, "synonyms": [] },
+            { "title": "Ходит", "percentage": 14, "synonyms": [] },
+            { "title": "Сидит", "percentage": 3, "synonyms": [] }
         ]
     },
     {
         "id": 2,
-        "title": "Космическое тело",
+        "title": "Какая бывает пицца?",
         "answers": [
-            { "text": "Планета", "percentage": 35, "synonyms": [] },
-            { "text": "Звезда", "percentage": 25, "synonyms": [] },
-            { "text": "Метеорит", "percentage": 15, "synonyms": [] },
-            { "text": "Комета", "percentage": 15, "synonyms": [] },
-            { "text": "Астероид", "percentage": 10, "synonyms": [] }
+            { "title": "Вкусная", "percentage": 44, "synonyms": [] },
+            { "title": "Большая", "percentage": 27, "synonyms": [] },
+            { "title": "Итальянская", "percentage": 14, "synonyms": [] },
+            { "title": "Круглая", "percentage": 11, "synonyms": [] },
+            { "title": "С грибами", "percentage": 4, "synonyms": ["Грибная"] }
         ]
     },
     {
         "id": 3,
-        "title": "Карточные игры",
+        "title": "Что едят с чаем?",
         "answers": [
-            { "text": "Покер", "percentage": 40, "synonyms": [] },
-            { "text": "Дурак", "percentage": 30, "synonyms": [] },
-            { "text": "Преферанс", "percentage": 15, "synonyms": ["Вист"] },
-            { "text": "Пасьянс", "percentage": 10, "synonyms": ["Косынка", "Паук"] },
-            { "text": "Блэкджек", "percentage": 5, "synonyms": ["Двадцать одно", "Очко", "Блек-джек", "Блекджек"] }
+            { "title": "Печенье", "percentage": 40, "synonyms": [] },
+            { "title": "Конфеты", "percentage": 25, "synonyms": [] },
+            { "title": "Бутерброд", "percentage": 19, "synonyms": [] },
+            { "title": "Торт", "percentage": 11, "synonyms": [] },
+            { "title": "Варенье", "percentage": 5, "synonyms": [] }
         ]
     },
     {
         "id": 4,
-        "title": "Компоненты компьютера",
+        "title": "Что любит прилипать к рукам?",
         "answers": [
-            { "text": "Процессор", "percentage": 30, "synonyms": [] },
-            { "text": "Видеокарта", "percentage": 25, "synonyms": ["Видяха"] },
-            { "text": "Оперативная память", "percentage": 20, "synonyms": ["Оперативка"] },
-            { "text": "Жёсткий диск", "percentage": 15, "synonyms": ["Винчестер", "Винч", "Винт"] },
-            { "text": "Материнская плата", "percentage": 10, "synonyms": ["Материнка", "Плата", "Мамка"] }
+            { "title": "Тесто", "percentage": 43, "synonyms": [] },
+            { "title": "Грязь", "percentage": 23, "synonyms": [] },
+            { "title": "Деньги", "percentage": 19, "synonyms": [] },
+            { "title": "Клей", "percentage": 12, "synonyms": [] },
+            { "title": "Жвачка", "percentage": 3, "synonyms": [] }
         ]
     },
     {
         "id": 5,
-        "title": "Направление в живописи",
+        "title": "Какая самая большая птица?",
         "answers": [
-            { "text": "Импрессионизм", "percentage": 30, "synonyms": [] },
-            { "text": "Реализм", "percentage": 25, "synonyms": [] },
-            { "text": "Кубизм", "percentage": 15, "synonyms": [] },
-            { "text": "Сюрреализм", "percentage": 15, "synonyms": [] },
-            { "text": "Абстракционизм", "percentage": 15, "synonyms": [] }
+            { "title": "Страус", "percentage": 42, "synonyms": [] },
+            { "title": "Орёл", "percentage": 26, "synonyms": [] },
+            { "title": "Пингвин", "percentage": 21, "synonyms": [] },
+            { "title": "Ястреб", "percentage": 6, "synonyms": [] },
+            { "title": "Аист", "percentage": 5, "synonyms": [] }
         ]
     },
     {
         "id": 6,
-        "title": "Цветок в букете",
+        "title": "Кому нужна непромокаемая одежда?",
         "answers": [
-            { "text": "Роза", "percentage": 40, "synonyms": [] },
-            { "text": "Тюльпан", "percentage": 25, "synonyms": [] },
-            { "text": "Хризантема", "percentage": 15, "synonyms": [] },
-            { "text": "Пион", "percentage": 10, "synonyms": [] },
-            { "text": "Лилия", "percentage": 10, "synonyms": [] }
+            { "title": "Водолазу", "percentage": 39, "synonyms": ["Водолаз"] },
+            { "title": "Рыбаку", "percentage": 25, "synonyms": ["Рыбак"] },
+            { "title": "Пожарному", "percentage": 20, "synonyms": ["Пожарный"] },
+            { "title": "Спасателю", "percentage": 12, "synonyms": ["Спасатель"] },
+            { "title": "Дворнику", "percentage": 4, "synonyms": ["Дворник"] }
         ]
     },
     {
         "id": 7,
-        "title": "Страны Южной Америки",
+        "title": "Кто не устаёт громко кричать?",
         "answers": [
-            { "text": "Бразилия", "percentage": 35, "synonyms": [] },
-            { "text": "Аргентина", "percentage": 25, "synonyms": [] },
-            { "text": "Колумбия", "percentage": 15, "synonyms": [] },
-            { "text": "Чили", "percentage": 15, "synonyms": [] },
-            { "text": "Перу", "percentage": 10, "synonyms": [] }
+            { "title": "Начальник", "percentage": 30, "synonyms": [] },
+            { "title": "Петух", "percentage": 25, "synonyms": [] },
+            { "title": "Учитель", "percentage": 20, "synonyms": [] },
+            { "title": "Оратор", "percentage": 15, "synonyms": [] },
+            { "title": "Жена", "percentage": 10, "synonyms": [] }
         ]
     },
     {
         "id": 8,
-        "title": "Поэты ХХ века",
+        "title": "Что необходимо на кухне?",
         "answers": [
-            { "text": "Есенин", "percentage": 30, "synonyms": ["Сергей Есенин"] },
-            { "text": "Маяковский", "percentage": 25, "synonyms": ["Владимир Маяковский"] },
-            { "text": "Ахматова", "percentage": 20, "synonyms": ["Анна Ахматова"] },
-            { "text": "Блок", "percentage": 15, "synonyms": ["Александр Блок"] },
-            { "text": "Цветаева", "percentage": 10, "synonyms": ["Марина Цветаева"] }
+            { "title": "Плита", "percentage": 42, "synonyms": [] },
+            { "title": "Холодильник", "percentage": 23, "synonyms": [] },
+            { "title": "Стол", "percentage": 19, "synonyms": [] },
+            { "title": "Микроволновая печь", "percentage": 13, "synonyms": ["Микроволновка"] },
+            { "title": "Телевизор", "percentage": 3, "synonyms": [] }
         ]
     },
     {
         "id": 9,
-        "title": "Шумное устройство в доме",
+        "title": "Откуда вы узнаёте последние новости?",
         "answers": [
-            { "text": "Пылесос", "percentage": 35, "synonyms": [] },
-            { "text": "Стиральная машина", "percentage": 25, "synonyms": ["Стиралка"] },
-            { "text": "Фен", "percentage": 15, "synonyms": [] },
-            { "text": "Посудомоечная машина", "percentage": 15, "synonyms": ["Посудомойка"] },
-            { "text": "Миксер", "percentage": 10, "synonyms": ["Блендер"] }
+            { "title": "Из интернета", "percentage": 30, "synonyms": ["Интернет", "Телеграм", "Социальные сети", "Вконтакте", "ВК"] },
+            { "title": "От партнера", "percentage": 25, "synonyms": ["Девушка", "Парень", "Жена", "Муж", "Партнер", "Супруг"] },
+            { "title": "От друзей", "percentage": 20, "synonyms": ["Друзья", "Друг", "Коллеги", "Коллега"] },
+            { "title": "Телевизор", "percentage": 15, "synonyms": [] },
+            { "title": "Из газет", "percentage": 10, "synonyms": [] }
         ]
     },
     {
         "id": 10,
-        "title": "Событие, заставляющее понервничать",
+        "title": "Чего хотят женщины?",
         "answers": [
-            { "text": "Экзамен", "percentage": 30, "synonyms": ["ЕГЭ", "Диплом"] },
-            { "text": "Собеседование", "percentage": 25, "synonyms": [] },
-            { "text": "Свидание", "percentage": 20, "synonyms": ["Знакомство"] },
-            { "text": "Публичное выступление", "percentage": 15, "synonyms": ["Выступление", "Караоке", "Доклад", "Речь", "Стендап"] },
-            { "text": "Свадьба", "percentage": 10, "synonyms": [] }
-        ]
-    },
-    {
-        "id": 11,
-        "title": "Это есть в аптечке",
-        "answers": [
-            { "text": "Лекарства", "percentage": 30, "synonyms": ["Таблетки", "Витамины"] },
-            { "text": "Бинт", "percentage": 25, "synonyms": ["Марля", "Повязка"] },
-            { "text": "Пластырь", "percentage": 20, "synonyms": ["Лейкопластырь"] },
-            { "text": "Градусник", "percentage": 15, "synonyms": ["Термометр"] },
-            { "text": "Йод", "percentage": 10, "synonyms": ["Зеленка", "Антисептик", "Перекись", "Перекись водорода", "Обеззараживающее"] }
+            { "title": "Любви", "percentage": 43, "synonyms": ["Любовь"] },
+            { "title": "Денег", "percentage": 27, "synonyms": ["Деньги"] },
+            { "title": "Счастья", "percentage": 15, "synonyms": ["Счастье"] },
+            { "title": "Детей", "percentage": 11, "synonyms": ["Дети"] },
+            { "title": "Шубу", "percentage": 4, "synonyms": ["Шуба"] }
         ]
     }
 ]

@@ -1,0 +1,123 @@
+[
+    {
+        "id": 1,
+        "title": "Цитрус",
+        "answers": [
+            { "text": "Апельсин", "percentage": 40, "synonyms": [] },
+            { "text": "Лимон", "percentage": 30, "synonyms": [] },
+            { "text": "Мандарин", "percentage": 15, "synonyms": [] },
+            { "text": "Грейпфрут", "percentage": 10, "synonyms": [] },
+            { "text": "Лайм", "percentage": 5, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Космическое тело",
+        "answers": [
+            { "text": "Планета", "percentage": 35, "synonyms": [] },
+            { "text": "Звезда", "percentage": 25, "synonyms": [] },
+            { "text": "Метеорит", "percentage": 15, "synonyms": [] },
+            { "text": "Комета", "percentage": 15, "synonyms": [] },
+            { "text": "Астероид", "percentage": 10, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Карточные игры",
+        "answers": [
+            { "text": "Покер", "percentage": 40, "synonyms": [] },
+            { "text": "Дурак", "percentage": 30, "synonyms": [] },
+            { "text": "Преферанс", "percentage": 15, "synonyms": ["Вист"] },
+            { "text": "Пасьянс", "percentage": 10, "synonyms": ["Косынка", "Паук"] },
+            { "text": "Блэкджек", "percentage": 5, "synonyms": ["Двадцать одно", "Очко", "Блек-джек", "Блекджек"] }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Компоненты компьютера",
+        "answers": [
+            { "text": "Процессор", "percentage": 30, "synonyms": [] },
+            { "text": "Видеокарта", "percentage": 25, "synonyms": ["Видяха"] },
+            { "text": "Оперативная память", "percentage": 20, "synonyms": ["Оперативка"] },
+            { "text": "Жёсткий диск", "percentage": 15, "synonyms": ["Винчестер", "Винч", "Винт"] },
+            { "text": "Материнская плата", "percentage": 10, "synonyms": ["Материнка", "Плата", "Мамка"] }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Направление в живописи",
+        "answers": [
+            { "text": "Импрессионизм", "percentage": 30, "synonyms": [] },
+            { "text": "Реализм", "percentage": 25, "synonyms": [] },
+            { "text": "Кубизм", "percentage": 15, "synonyms": [] },
+            { "text": "Сюрреализм", "percentage": 15, "synonyms": [] },
+            { "text": "Абстракционизм", "percentage": 15, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Цветок в букете",
+        "answers": [
+            { "text": "Роза", "percentage": 40, "synonyms": [] },
+            { "text": "Тюльпан", "percentage": 25, "synonyms": [] },
+            { "text": "Хризантема", "percentage": 15, "synonyms": [] },
+            { "text": "Пион", "percentage": 10, "synonyms": [] },
+            { "text": "Лилия", "percentage": 10, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Страны Южной Америки",
+        "answers": [
+            { "text": "Бразилия", "percentage": 35, "synonyms": [] },
+            { "text": "Аргентина", "percentage": 25, "synonyms": [] },
+            { "text": "Колумбия", "percentage": 15, "synonyms": [] },
+            { "text": "Чили", "percentage": 15, "synonyms": [] },
+            { "text": "Перу", "percentage": 10, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Поэты ХХ века",
+        "answers": [
+            { "text": "Есенин", "percentage": 30, "synonyms": ["Сергей Есенин"] },
+            { "text": "Маяковский", "percentage": 25, "synonyms": ["Владимир Маяковский"] },
+            { "text": "Ахматова", "percentage": 20, "synonyms": ["Анна Ахматова"] },
+            { "text": "Блок", "percentage": 15, "synonyms": ["Александр Блок"] },
+            { "text": "Цветаева", "percentage": 10, "synonyms": ["Марина Цветаева"] }
+        ]
+    },
+    {
+        "id": 9,
+        "title": "Шумное устройство в доме",
+        "answers": [
+            { "text": "Пылесос", "percentage": 35, "synonyms": [] },
+            { "text": "Стиральная машина", "percentage": 25, "synonyms": ["Стиралка"] },
+            { "text": "Фен", "percentage": 15, "synonyms": [] },
+            { "text": "Посудомоечная машина", "percentage": 15, "synonyms": ["Посудомойка"] },
+            { "text": "Миксер", "percentage": 10, "synonyms": ["Блендер"] }
+        ]
+    },
+    {
+        "id": 10,
+        "title": "Событие, заставляющее понервничать",
+        "answers": [
+            { "text": "Экзамен", "percentage": 30, "synonyms": ["ЕГЭ", "Диплом"] },
+            { "text": "Собеседование", "percentage": 25, "synonyms": [] },
+            { "text": "Свидание", "percentage": 20, "synonyms": ["Знакомство"] },
+            { "text": "Публичное выступление", "percentage": 15, "synonyms": ["Выступление", "Караоке", "Доклад", "Речь", "Стендап"] },
+            { "text": "Свадьба", "percentage": 10, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 11,
+        "title": "Это есть в аптечке",
+        "answers": [
+            { "text": "Лекарства", "percentage": 30, "synonyms": ["Таблетки", "Витамины"] },
+            { "text": "Бинт", "percentage": 25, "synonyms": ["Марля", "Повязка"] },
+            { "text": "Пластырь", "percentage": 20, "synonyms": ["Лейкопластырь"] },
+            { "text": "Градусник", "percentage": 15, "synonyms": ["Термометр"] },
+            { "text": "Йод", "percentage": 10, "synonyms": ["Зеленка", "Антисептик", "Перекись", "Перекись водорода", "Обеззараживающее"] }
+        ]
+    }
+]
