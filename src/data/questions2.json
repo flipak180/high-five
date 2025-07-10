@@ -56,13 +56,13 @@
     },
     {
         "id": 6,
-        "title": "Цветок в букете",
+        "title": "Цветы для букета",
         "answers": [
             { "text": "Роза", "percentage": 40, "synonyms": [] },
             { "text": "Тюльпан", "percentage": 25, "synonyms": [] },
             { "text": "Хризантема", "percentage": 15, "synonyms": [] },
             { "text": "Пион", "percentage": 10, "synonyms": [] },
-            { "text": "Лилия", "percentage": 10, "synonyms": [] }
+            { "text": "Гвоздики", "percentage": 10, "synonyms": [] }
         ]
     },
     {
