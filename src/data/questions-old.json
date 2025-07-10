@@ -3,165 +3,165 @@
         "id": 1,
         "title": "Цитрус",
         "answers": [
-            { "text": "Апельсин", "percentage": 40, "synonyms": [] },
-            { "text": "Мандарин", "percentage": 25, "synonyms": [] },
-            { "text": "Лимон", "percentage": 20, "synonyms": [] },
-            { "text": "Грейпфрут", "percentage": 7, "synonyms": [] },
-            { "text": "Лайм", "percentage": 5, "synonyms": [] }
+            { "title": "Апельсин", "percentage": 40, "synonyms": [] },
+            { "title": "Мандарин", "percentage": 25, "synonyms": [] },
+            { "title": "Лимон", "percentage": 20, "synonyms": [] },
+            { "title": "Грейпфрут", "percentage": 7, "synonyms": [] },
+            { "title": "Лайм", "percentage": 5, "synonyms": [] }
         ]
     },
     {
         "id": 2,
         "title": "Ингредиенты окрошки",
         "answers": [
-            { "text": "Квас", "percentage": 30, "synonyms": [] },
-            { "text": "Картошка", "percentage": 20, "synonyms": ["Картофель"] },
-            { "text": "Яйцо", "percentage": 15, "synonyms": ["Яйца"] },
-            { "text": "Колбаса", "percentage": 15, "synonyms": [] },
-            { "text": "Огурец", "percentage": 10, "synonyms": ["Огурцы"] }
+            { "title": "Квас", "percentage": 30, "synonyms": [] },
+            { "title": "Картошка", "percentage": 20, "synonyms": ["Картофель"] },
+            { "title": "Яйцо", "percentage": 15, "synonyms": ["Яйца"] },
+            { "title": "Колбаса", "percentage": 15, "synonyms": [] },
+            { "title": "Огурец", "percentage": 10, "synonyms": ["Огурцы"] }
         ]
     },
     {
         "id": 3,
         "title": "Это лежит в морозилке",
         "answers": [
-            { "text": "Мороженое", "percentage": 30, "synonyms": [] },
-            { "text": "Пельмени", "percentage": 25, "synonyms": [] },
-            { "text": "Мясо", "percentage": 20, "synonyms": ["Кура", "Курица", "Говядина", "Свинина"] },
-            { "text": "Ягоды", "percentage": 10, "synonyms": ["Брусника", "Клюква", "Клубника", "Малина"] },
-            { "text": "Овощи", "percentage": 10, "synonyms": [] }
+            { "title": "Мороженое", "percentage": 30, "synonyms": [] },
+            { "title": "Пельмени", "percentage": 25, "synonyms": [] },
+            { "title": "Мясо", "percentage": 20, "synonyms": ["Кура", "Курица", "Говядина", "Свинина"] },
+            { "title": "Ягоды", "percentage": 10, "synonyms": ["Брусника", "Клюква", "Клубника", "Малина"] },
+            { "title": "Овощи", "percentage": 10, "synonyms": [] }
         ]
     },
     {
         "id": 4,
         "title": "Сладости",
         "answers": [
-            { "text": "Шоколад", "percentage": 30, "synonyms": [] },
-            { "text": "Конфеты", "percentage": 25, "synonyms": [] },
-            { "text": "Печенье", "percentage": 15, "synonyms": [] },
-            { "text": "Торт", "percentage": 10, "synonyms": [] },
-            { "text": "Мармелад", "percentage": 10, "synonyms": [] }
+            { "title": "Шоколад", "percentage": 30, "synonyms": [] },
+            { "title": "Конфеты", "percentage": 25, "synonyms": [] },
+            { "title": "Печенье", "percentage": 15, "synonyms": [] },
+            { "title": "Торт", "percentage": 10, "synonyms": [] },
+            { "title": "Мармелад", "percentage": 10, "synonyms": [] }
         ]
     },
     {
         "id": 5,
         "title": "Растёт на дереве",
         "answers": [
-            { "text": "Яблоко", "percentage": 35, "synonyms": [] },
-            { "text": "Груша", "percentage": 25, "synonyms": [] },
-            { "text": "Вишня", "percentage": 15, "synonyms": [] },
-            { "text": "Слива", "percentage": 10, "synonyms": [] },
-            { "text": "Персик", "percentage": 10, "synonyms": [] }
+            { "title": "Яблоко", "percentage": 35, "synonyms": [] },
+            { "title": "Груша", "percentage": 25, "synonyms": [] },
+            { "title": "Вишня", "percentage": 15, "synonyms": [] },
+            { "title": "Слива", "percentage": 10, "synonyms": [] },
+            { "title": "Персик", "percentage": 10, "synonyms": [] }
         ]
     },
     {
         "id": 6,
         "title": "Специи",
         "answers": [
-            { "text": "Чёрный перец", "percentage": 38, "synonyms": [] },
-            { "text": "Лавровый лист", "percentage": 28, "synonyms": [] },
-            { "text": "Паприка", "percentage": 12, "synonyms": [] },
-            { "text": "Куркума", "percentage": 7, "synonyms": [] },
-            { "text": "Корица", "percentage": 7, "synonyms": [] }
+            { "title": "Чёрный перец", "percentage": 38, "synonyms": [] },
+            { "title": "Лавровый лист", "percentage": 28, "synonyms": [] },
+            { "title": "Паприка", "percentage": 12, "synonyms": [] },
+            { "title": "Куркума", "percentage": 7, "synonyms": [] },
+            { "title": "Корица", "percentage": 7, "synonyms": [] }
         ]
     },
     {
         "id": 7,
         "title": "Фрукт с косточкой",
         "answers": [
-            { "text": "Вишня", "percentage": 30, "synonyms": [] },
-            { "text": "Слива", "percentage": 25, "synonyms": [] },
-            { "text": "Абрикос", "percentage": 15, "synonyms": [] },
-            { "text": "Персик", "percentage": 12, "synonyms": [] },
-            { "text": "Манго", "percentage": 10, "synonyms": [] }
+            { "title": "Вишня", "percentage": 30, "synonyms": [] },
+            { "title": "Слива", "percentage": 25, "synonyms": [] },
+            { "title": "Абрикос", "percentage": 15, "synonyms": [] },
+            { "title": "Персик", "percentage": 12, "synonyms": [] },
+            { "title": "Манго", "percentage": 10, "synonyms": [] }
         ]
     },
     {
         "id": 8,
         "title": "Виды масел",
         "answers": [
-            { "text": "Подсолнечное", "percentage": 40, "synonyms": [] },
-            { "text": "Оливковое", "percentage": 25, "synonyms": [] },
-            { "text": "Сливочное", "percentage": 15, "synonyms": [] },
-            { "text": "Кукурузное", "percentage": 8, "synonyms": [] },
-            { "text": "Кокосовое", "percentage": 7, "synonyms": [] }
+            { "title": "Подсолнечное", "percentage": 40, "synonyms": [] },
+            { "title": "Оливковое", "percentage": 25, "synonyms": [] },
+            { "title": "Сливочное", "percentage": 15, "synonyms": [] },
+            { "title": "Кукурузное", "percentage": 8, "synonyms": [] },
+            { "title": "Кокосовое", "percentage": 7, "synonyms": [] }
         ]
     },
     {
         "id": 9,
         "title": "Источник белка",
         "answers": [
-            { "text": "Курица", "percentage": 30, "synonyms": [] },
-            { "text": "Мясо", "percentage": 25, "synonyms": [] },
-            { "text": "Яйца", "percentage": 15, "synonyms": [] },
-            { "text": "Рыба", "percentage": 12, "synonyms": [] },
-            { "text": "Творог", "percentage": 10, "synonyms": [] }
+            { "title": "Курица", "percentage": 30, "synonyms": [] },
+            { "title": "Мясо", "percentage": 25, "synonyms": [] },
+            { "title": "Яйца", "percentage": 15, "synonyms": [] },
+            { "title": "Рыба", "percentage": 12, "synonyms": [] },
+            { "title": "Творог", "percentage": 10, "synonyms": [] }
         ]
     },
     {
         "id": 10,
         "title": "Блюда русской кухни",
         "answers": [
-            { "text": "Борщ", "percentage": 28, "synonyms": [] },
-            { "text": "Пельмени", "percentage": 25, "synonyms": [] },
-            { "text": "Блины", "percentage": 15, "synonyms": [] },
-            { "text": "Окрошка", "percentage": 12, "synonyms": [] },
-            { "text": "Оливье", "percentage": 10, "synonyms": [] }
+            { "title": "Борщ", "percentage": 28, "synonyms": [] },
+            { "title": "Пельмени", "percentage": 25, "synonyms": [] },
+            { "title": "Блины", "percentage": 15, "synonyms": [] },
+            { "title": "Окрошка", "percentage": 12, "synonyms": [] },
+            { "title": "Оливье", "percentage": 10, "synonyms": [] }
         ]
     },
     {
         "id": 11,
         "title": "Растёт в земле",
         "answers": [
-            { "text": "Картошка", "percentage": 35, "synonyms": [] },
-            { "text": "Морковь", "percentage": 25, "synonyms": [] },
-            { "text": "Свёкла", "percentage": 15, "synonyms": [] },
-            { "text": "Редис", "percentage": 10, "synonyms": [] },
-            { "text": "Лук", "percentage": 8, "synonyms": [] }
+            { "title": "Картошка", "percentage": 35, "synonyms": [] },
+            { "title": "Морковь", "percentage": 25, "synonyms": [] },
+            { "title": "Свёкла", "percentage": 15, "synonyms": [] },
+            { "title": "Редис", "percentage": 10, "synonyms": [] },
+            { "title": "Лук", "percentage": 8, "synonyms": [] }
         ]
     },
     {
         "id": 12,
         "title": "Салатная зелень",
         "answers": [
-            { "text": "Укроп", "percentage": 30, "synonyms": [] },
-            { "text": "Петрушка", "percentage": 25, "synonyms": [] },
-            { "text": "Листовой салат", "percentage": 15, "synonyms": [] },
-            { "text": "Руккола", "percentage": 12, "synonyms": [] },
-            { "text": "Зелёный лук", "percentage": 10, "synonyms": [] }
+            { "title": "Укроп", "percentage": 30, "synonyms": [] },
+            { "title": "Петрушка", "percentage": 25, "synonyms": [] },
+            { "title": "Листовой салат", "percentage": 15, "synonyms": [] },
+            { "title": "Руккола", "percentage": 12, "synonyms": [] },
+            { "title": "Зелёный лук", "percentage": 10, "synonyms": [] }
         ]
     },
     {
         "id": 13,
         "title": "Сорта сыров",
         "answers": [
-            { "text": "Маасдам", "percentage": 25, "synonyms": [] },
-            { "text": "Эдам", "percentage": 20, "synonyms": [] },
-            { "text": "Бри", "percentage": 15, "synonyms": [] },
-            { "text": "Горгонзола", "percentage": 12, "synonyms": [] },
-            { "text": "Пармезан", "percentage": 15, "synonyms": [] }
+            { "title": "Маасдам", "percentage": 25, "synonyms": [] },
+            { "title": "Эдам", "percentage": 20, "synonyms": [] },
+            { "title": "Бри", "percentage": 15, "synonyms": [] },
+            { "title": "Горгонзола", "percentage": 12, "synonyms": [] },
+            { "title": "Пармезан", "percentage": 15, "synonyms": [] }
         ]
     },
     {
         "id": 14,
         "title": "Орехи",
         "answers": [
-            { "text": "Арахис", "percentage": 25, "synonyms": [] },
-            { "text": "Фундук", "percentage": 15, "synonyms": [] },
-            { "text": "Миндаль", "percentage": 12, "synonyms": [] },
-            { "text": "Кешью", "percentage": 10, "synonyms": [] },
-            { "text": "Фисташка", "percentage": 8, "synonyms": ["Фисташки"] }
+            { "title": "Арахис", "percentage": 25, "synonyms": [] },
+            { "title": "Фундук", "percentage": 15, "synonyms": [] },
+            { "title": "Миндаль", "percentage": 12, "synonyms": [] },
+            { "title": "Кешью", "percentage": 10, "synonyms": [] },
+            { "title": "Фисташка", "percentage": 8, "synonyms": ["Фисташки"] }
         ]
     },
     {
         "id": 15,
         "title": "Завтрак",
         "answers": [
-            { "text": "Яичница", "percentage": 30, "synonyms": [] },
-            { "text": "Каша", "percentage": 20, "synonyms": [] },
-            { "text": "Бутерброд", "percentage": 15, "synonyms": [] },
-            { "text": "Мюсли", "percentage": 12, "synonyms": [] },
-            { "text": "Сырники", "percentage": 13, "synonyms": [] }
+            { "title": "Яичница", "percentage": 30, "synonyms": [] },
+            { "title": "Каша", "percentage": 20, "synonyms": [] },
+            { "title": "Бутерброд", "percentage": 15, "synonyms": [] },
+            { "title": "Мюсли", "percentage": 12, "synonyms": [] },
+            { "title": "Сырники", "percentage": 13, "synonyms": [] }
         ]
     }
 ]

@@ -35,7 +35,7 @@ onMounted(async () => {
 async function submitAnswer() {
     error.value = false;
     const answerIndex = question.value.answers
-        .findIndex(answer => [answer.text, ...answer.synonyms].map(answer => answer.toLowerCase()).includes(userAnswer.value.toLowerCase()));
+        .findIndex(answer => [answer.title, ...answer.synonyms].map(answer => answer.toLowerCase()).includes(userAnswer.value.toLowerCase()));
     if (answerIndex > -1) {
         progressStore.add(question.value.id, answerIndex + 1);
     } else {
@@ -67,7 +67,7 @@ function setFocus() {
         <ion-content :fullscreen="true" class="ion-padding">
             <div class="answers">
                 <div class="answer" v-for="(answer, i) in question?.answers" :key="answer.id" :class="{ opened: progress.includes(i + 1) }">
-                    <div class="answer__text">{{ answer.text }}</div>
+                    <div class="answer__text">{{ answer.title }}</div>
                     <div class="answer__percent">
                         <div>
                             <span>{{ answer.percentage }}</span>

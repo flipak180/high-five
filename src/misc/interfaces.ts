@@ -20,7 +20,7 @@ export interface Question {
 
 export interface Answer {
     id: number,
-    text: string,
+    title: string,
     percentage: string,
     synonyms: string[]
 }
