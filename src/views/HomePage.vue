@@ -7,8 +7,10 @@ import router from "@/misc/router";
 import {QuestionStatuses} from "@/mappers/QuestionMapper";
 import format from "@/misc/format";
 import {useQuestionsStore} from "@/stores/questions";
+import {useProgressStore} from "@/stores/progress";
 
 const questionsStore = useQuestionsStore()
+const progressStore = useProgressStore()
 
 function handleClick(question: Question) {
     if (question.status === QuestionStatuses.LOCKED) {
@@ -17,11 +19,15 @@ function handleClick(question: Question) {
 
     router.push({name: 'question', params: {id: question.id}})
 }
+
+function resetProgress() {
+    progressStore.reset()
+}
 </script>
 
 <template>
     <ion-page>
-        <ion-header>
+        <ion-header @click="resetProgress">
             <ion-toolbar>
                 <ion-title>Выбор уровня</ion-title>
             </ion-toolbar>

@@ -40,10 +40,15 @@ export const useProgressStore = defineStore('progress', () => {
         questionsStore.update()
     }
 
+    function reset() {
+        progress.value = {}
+    }
+
     return {
         progress,
         add,
         create,
+        reset,
         totalAnswers,
     }
 
