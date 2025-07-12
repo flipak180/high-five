@@ -6,11 +6,9 @@ import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
 <template>
     <div class="clues">
-        <ion-button color="success">
+        <ion-button expand="block" color="success">
             <div class="clue">
-                <div class="clue__title">
-                    Буква
-                </div>
+                <div class="clue__title">Буква</div>
                 <div class="clue__price">
                     <span>
                         20
@@ -19,11 +17,9 @@ import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
                 </div>
             </div>
         </ion-button>
-        <ion-button color="success">
+        <ion-button expand="block" color="success">
             <div class="clue">
-                <div class="clue__title">
-                    Слово
-                </div>
+                <div class="clue__title">Слово</div>
                 <div class="clue__price">
                     <span>
                         50
@@ -37,17 +33,22 @@ import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
 <style lang="scss">
 .clue-modal {
-    --width: fit-content;
+    --width: calc(100% - 32px);
     //--max-width: 250px;
     --height: fit-content;
     --border-radius: 6px;
-    //--background: transparent;
+    --background: transparent;
+    --backdrop-opacity: .4;
 
     .clues {
         color: var(--black);
         display: flex;
         gap: 8px;
         padding: 8px;
+
+        ion-button {
+            flex-grow: 1;
+        }
 
         .clue {
             display: flex;

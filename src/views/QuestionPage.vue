@@ -91,7 +91,7 @@ async function showClue() {
                 <h1>{{ question.title }}</h1>
                 <form class="form" @submit.prevent="submitAnswer">
                     <input v-model="userAnswer" type="text" inputmode="text" aria-label="Ответ" ref="autofocus"
-                           @blur="setFocus" id="user_answer" class="form__input" placeholder="Введите слово...">
+                           @blur="setFocus" id="user_answer" class="form__input" placeholder="Ваш вариант...">
                     <div class="form__button" @click="submitAnswer">
                         <FontAwesomeIcon class="form__icon" :icon="faArrowRight" />
                     </div>
