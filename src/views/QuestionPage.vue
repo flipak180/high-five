@@ -9,7 +9,7 @@ import {useQuestionsStore} from "@/stores/questions";
 import {Question} from "@/misc/interfaces";
 import {useProgressStore} from "@/stores/progress";
 import ClueModal from "@/components/modals/ClueModal.vue";
-import Score from "@/components/Score.vue";
+import HeaderScore from "@/components/HeaderScore.vue";
 
 const route = useRoute();
 const questionsStore = useQuestionsStore()
@@ -72,11 +72,10 @@ async function showClue() {
                 <ion-buttons slot="start">
                     <ion-back-button text="Назад"></ion-back-button>
                 </ion-buttons>
-                <Score slot="end" />
+                <HeaderScore slot="end" />
             </ion-toolbar>
         </ion-header>
         <ion-content :fullscreen="true" class="ion-padding">
-            <h1>{{ question.title }}</h1>
             <div class="answers">
                 <div class="answer" v-for="(answer, i) in question?.answers" :key="answer.id" :class="{ opened: progress.includes(i + 1) }" @click="showClue">
                     <div class="answer__text">{{ answer.title }}</div>
@@ -88,13 +87,17 @@ async function showClue() {
                     </div>
                 </div>
             </div>
-            <form class="form" @submit.prevent="submitAnswer">
-                <input v-model="userAnswer" type="text" inputmode="text" aria-label="Ответ" ref="autofocus"
-                       @blur="setFocus" id="user_answer" class="form__input" placeholder="Введите слово...">
-                <div class="form__button" @click="submitAnswer">
-                    <FontAwesomeIcon class="form__icon" :icon="faArrowRight" />
-                </div>
-            </form>
+            <div class="bottom">
+                <h1>{{ question.title }}</h1>
+                <form class="form" @submit.prevent="submitAnswer">
+                    <input v-model="userAnswer" type="text" inputmode="text" aria-label="Ответ" ref="autofocus"
+                           @blur="setFocus" id="user_answer" class="form__input" placeholder="Введите слово...">
+                    <div class="form__button" @click="submitAnswer">
+                        <FontAwesomeIcon class="form__icon" :icon="faArrowRight" />
+                    </div>
+                </form>
+            </div>
+
         </ion-content>
     </ion-page>
 </template>
@@ -105,13 +108,6 @@ ion-toolbar {
 }
 ion-back-button {
     --color: #fff;
-}
-h1 {
-    color: var(--black);
-    text-align: center;
-    font-size: 18px;
-    font-weight: 500;
-    margin: 0 0 var(--ion-padding);
 }
 .answers {
     display: grid;
@@ -165,40 +161,52 @@ h1 {
     }
 }
 
-.form {
+.bottom {
     position: fixed;
     bottom: var(--ion-safe-area-bottom, 0);
     left: 0;
     margin: 16px;
     width: calc(100% - 32px);
 
-    &__input {
-        background: var(--grey-light);
-        border-radius: 8px;
-        padding: 5px 10px;
-        outline: none;
-        border: none;
-        display: block;
-        font-size: 16px;
-        width: 100%;
-        height: 40px;
+    h1 {
         color: var(--black);
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+        margin: 0 0 var(--ion-padding);
     }
 
-    &__button {
-        position: absolute;
-        right: 0;
-        top: 0;
-        margin: 4px;
-        background: var(--white);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        border-radius: 8px;
-        height: calc(100% - 8px);
-        aspect-ratio: 1 / 1;
-        color: var(--black);
+    .form {
+        position: relative;
+
+        &__input {
+            background: var(--grey-light);
+            border-radius: 8px;
+            padding: 5px 10px;
+            outline: none;
+            border: none;
+            display: block;
+            font-size: 16px;
+            width: 100%;
+            height: 40px;
+            color: var(--black);
+        }
+
+        &__button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin: 4px;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 8px;
+            height: calc(100% - 8px);
+            aspect-ratio: 1 / 1;
+            color: var(--black);
+        }
     }
 }
 </style>

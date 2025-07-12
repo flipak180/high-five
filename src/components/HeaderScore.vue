@@ -2,11 +2,14 @@
 
 import {faCoins} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import {useProgressStore} from "@/stores/progress";
+
+const progressStore = useProgressStore()
 </script>
 
 <template>
     <div class="score">
-        256
+        {{ progressStore.score }}
         <FontAwesomeIcon class="score__icon" :icon="faCoins" />
     </div>
 </template>

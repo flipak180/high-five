@@ -4,6 +4,8 @@ import {useQuestionsStore} from "@/stores/questions";
 
 export const useProgressStore = defineStore('progress', () => {
 
+    const SCORE_PER_ANSWER = 10;
+
     // const progress = ref<{[key: number]: number[]}>({
     //     1: [1, 2, 3, 4, 5],
     //     2: [1, 3, 4],
@@ -13,6 +15,7 @@ export const useProgressStore = defineStore('progress', () => {
     const questionsStore = useQuestionsStore()
 
     const progress = ref<{[key: number]: number[]}>({})
+    const score = ref<number>(0)
 
     const totalAnswers = computed<number>(() => {
         return Object.values(progress.value)
@@ -24,9 +27,11 @@ export const useProgressStore = defineStore('progress', () => {
         if (questionId in progress.value) {
             if (!progress.value[questionId].includes(answerNumber)) {
                 progress.value[questionId].push(answerNumber)
+                score.value += SCORE_PER_ANSWER;
             }
         } else {
             progress.value[questionId] = [answerNumber];
+            score.value += SCORE_PER_ANSWER;
         }
         questionsStore.update()
     }
@@ -42,6 +47,7 @@ export const useProgressStore = defineStore('progress', () => {
 
     function reset() {
         progress.value = {}
+        score.value = 0
     }
 
     return {
@@ -50,6 +56,7 @@ export const useProgressStore = defineStore('progress', () => {
         create,
         reset,
         totalAnswers,
+        score,
     }
 
 }, {

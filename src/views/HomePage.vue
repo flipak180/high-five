@@ -8,7 +8,7 @@ import {QuestionStatuses} from "@/mappers/QuestionMapper";
 import format from "@/misc/format";
 import {useQuestionsStore} from "@/stores/questions";
 import {useProgressStore} from "@/stores/progress";
-import Score from "@/components/Score.vue";
+import HeaderScore from "@/components/HeaderScore.vue";
 
 const questionsStore = useQuestionsStore()
 const progressStore = useProgressStore()
@@ -31,7 +31,7 @@ function resetProgress() {
         <ion-header @click="resetProgress">
             <ion-toolbar>
                 <ion-title>Выбор уровня</ion-title>
-                <Score slot="end" />
+                <HeaderScore slot="end" />
             </ion-toolbar>
         </ion-header>
         <ion-content :fullscreen="true" class="ion-padding">
