@@ -24,7 +24,7 @@ const progressStore = useProgressStore()
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
 
     &__icon {
         color: #FFD166;
