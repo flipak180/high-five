@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from '@ionic/vue';
+import {IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonToolbar, modalController} from '@ionic/vue';
 import {useRoute} from "vue-router";
 import {computed, onMounted, Ref, ref, useTemplateRef} from "vue";
 import {Haptics, NotificationType} from "@capacitor/haptics";
@@ -8,6 +8,8 @@ import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
 import {useQuestionsStore} from "@/stores/questions";
 import {Question} from "@/misc/interfaces";
 import {useProgressStore} from "@/stores/progress";
+import ClueModal from "@/components/modals/ClueModal.vue";
+import Score from "@/components/Score.vue";
 
 const route = useRoute();
 const questionsStore = useQuestionsStore()
@@ -52,6 +54,15 @@ function setFocus() {
     }
     autofocus.value.focus()
 }
+
+async function showClue() {
+    const modal = await modalController.create({
+        component: ClueModal,
+        cssClass: 'clue-modal',
+    });
+
+    await modal.present();
+}
 </script>
 
 <template>
@@ -61,12 +72,13 @@ function setFocus() {
                 <ion-buttons slot="start">
                     <ion-back-button text="Назад"></ion-back-button>
                 </ion-buttons>
-                <ion-title>{{ question.title }}</ion-title>
+                <Score slot="end" />
             </ion-toolbar>
         </ion-header>
         <ion-content :fullscreen="true" class="ion-padding">
+            <h1>{{ question.title }}</h1>
             <div class="answers">
-                <div class="answer" v-for="(answer, i) in question?.answers" :key="answer.id" :class="{ opened: progress.includes(i + 1) }">
+                <div class="answer" v-for="(answer, i) in question?.answers" :key="answer.id" :class="{ opened: progress.includes(i + 1) }" @click="showClue">
                     <div class="answer__text">{{ answer.title }}</div>
                     <div class="answer__percent">
                         <div>
@@ -93,6 +105,13 @@ ion-toolbar {
 }
 ion-back-button {
     --color: #fff;
+}
+h1 {
+    color: var(--black);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 var(--ion-padding);
 }
 .answers {
     display: grid;
