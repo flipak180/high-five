@@ -48,6 +48,7 @@ function resetProgress() {
 <style lang="scss" scoped>
 ion-toolbar {
     --background: #EF476F;
+    color: var(--white);
 }
 .questions {
     display: grid;
@@ -56,6 +57,7 @@ ion-toolbar {
     gap: 16px;
     max-width: 256px;
     margin: 0 auto;
+    color: var(--white);
 
     .question {
         aspect-ratio: 2/1;

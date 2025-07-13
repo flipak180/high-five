@@ -1,14 +1,13 @@
 <script setup lang="ts">
-import {IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonToolbar, modalController} from '@ionic/vue';
+import {alertController, IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonToolbar} from '@ionic/vue';
 import {useRoute} from "vue-router";
 import {computed, onMounted, Ref, ref, useTemplateRef} from "vue";
 import {Haptics, NotificationType} from "@capacitor/haptics";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
-import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
+import {faArrowRight, faQuestion} from "@fortawesome/free-solid-svg-icons";
 import {useQuestionsStore} from "@/stores/questions";
 import {Question} from "@/misc/interfaces";
 import {useProgressStore} from "@/stores/progress";
-import ClueModal from "@/components/modals/ClueModal.vue";
 import HeaderScore from "@/components/HeaderScore.vue";
 
 const route = useRoute();
@@ -56,12 +55,35 @@ function setFocus() {
 }
 
 async function showClue() {
-    const modal = await modalController.create({
-        component: ClueModal,
-        cssClass: 'clue-modal',
+    // const modal = await modalController.create({
+    //     component: ClueModal,
+    //     cssClass: 'clue-modal',
+    // });
+    //
+    // await modal.present();
+
+    const alert = await alertController.create({
+        header: 'Открыть первую букву?',
+        message: 'A message should be a short, complete sentence.',
+        buttons: [
+            {
+                text: 'Нет',
+                role: 'cancel',
+                handler: () => {
+                    console.log('Alert canceled');
+                },
+            },
+            {
+                text: 'Да',
+                role: 'confirm',
+                handler: () => {
+                    console.log('Alert confirmed');
+                },
+            },
+        ],
     });
 
-    await modal.present();
+    await alert.present();
 }
 </script>
 
@@ -85,6 +107,9 @@ async function showClue() {
                             <small>%</small>
                         </div>
                     </div>
+                    <div class="answer__clue" v-if="!progress.includes(i + 1)">
+                        <FontAwesomeIcon class="form__icon" :icon="faQuestion" />
+                    </div>
                 </div>
             </div>
             <div class="bottom">
@@ -97,7 +122,6 @@ async function showClue() {
                     </div>
                 </form>
             </div>
-
         </ion-content>
     </ion-page>
 </template>
@@ -105,6 +129,7 @@ async function showClue() {
 <style lang="scss" scoped>
 ion-toolbar {
     --background: #EF476F;
+    color: var(--white);
 }
 ion-back-button {
     --color: #fff;
@@ -126,6 +151,23 @@ ion-back-button {
         justify-content: center;
         text-align: center;
         background: var(--grey-light);
+
+        &__clue {
+            background-color: var(--yellow);
+            color: var(--white);
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translate(0, -50%);
+            height: 80%;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 8px;
+        }
 
         &__percent {
             background-color: #EF476F;
