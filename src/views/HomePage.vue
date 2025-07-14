@@ -9,9 +9,11 @@ import format from "@/misc/format";
 import {useQuestionsStore} from "@/stores/questions";
 import {useProgressStore} from "@/stores/progress";
 import HeaderScore from "@/components/HeaderScore.vue";
+import {useCluesStore} from "@/stores/clues";
 
 const questionsStore = useQuestionsStore()
 const progressStore = useProgressStore()
+const cluesStore = useCluesStore()
 
 function handleClick(question: Question) {
     if (question.status === QuestionStatuses.LOCKED) {
@@ -23,6 +25,7 @@ function handleClick(question: Question) {
 
 function resetProgress() {
     progressStore.reset()
+    cluesStore.reset()
 }
 </script>
 

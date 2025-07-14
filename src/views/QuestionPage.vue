@@ -9,15 +9,21 @@ import {useQuestionsStore} from "@/stores/questions";
 import {Question} from "@/misc/interfaces";
 import {useProgressStore} from "@/stores/progress";
 import HeaderScore from "@/components/HeaderScore.vue";
+import {useCluesStore} from "@/stores/clues";
+import format from "@/misc/format";
 
 const route = useRoute();
 const questionsStore = useQuestionsStore()
 const progressStore = useProgressStore()
+const cluesStore = useCluesStore()
 const question = computed<Question>(() => {
     return questionsStore.questions.find(item => item.id === +route.params.id) || {};
 })
 const progress = computed<number[]>(() => {
     return progressStore.progress[question.value.id] || [];
+})
+const clues = computed<number[]>(() => {
+    return cluesStore.clues[question.value.id] || [];
 })
 
 const autofocus: Ref = useTemplateRef('autofocus');
@@ -54,7 +60,7 @@ function setFocus() {
     autofocus.value.focus()
 }
 
-async function showClue() {
+async function showClue(answerNumber: number) {
     // const modal = await modalController.create({
     //     component: ClueModal,
     //     cssClass: 'clue-modal',
@@ -62,22 +68,25 @@ async function showClue() {
     //
     // await modal.present();
 
+    const alreadyHasClue = clues.value.includes(answerNumber);
+
     const alert = await alertController.create({
-        header: 'Открыть первую букву?',
-        message: 'A message should be a short, complete sentence.',
+        header: !alreadyHasClue ? 'Открыть букву?' : 'Открыть слово?',
+        message: !alreadyHasClue ? 'Это будет стоить 10 монет.' : 'Это будет стоить 20 монет.',
         buttons: [
             {
                 text: 'Нет',
                 role: 'cancel',
-                handler: () => {
-                    console.log('Alert canceled');
-                },
             },
             {
                 text: 'Да',
                 role: 'confirm',
                 handler: () => {
-                    console.log('Alert confirmed');
+                    if (alreadyHasClue) {
+                        progressStore.add(question.value.id, answerNumber);
+                    } else {
+                        cluesStore.add(question.value.id, answerNumber)
+                    }
                 },
             },
         ],
@@ -99,8 +108,11 @@ async function showClue() {
         </ion-header>
         <ion-content :fullscreen="true" class="ion-padding">
             <div class="answers">
-                <div class="answer" v-for="(answer, i) in question?.answers" :key="answer.id" :class="{ opened: progress.includes(i + 1) }" @click="showClue">
-                    <div class="answer__text">{{ answer.title }}</div>
+                <div class="answer" v-for="(answer, i) in question?.answers" :key="answer.id" :class="{ opened: progress.includes(i + 1) }" @click="showClue(i + 1)">
+                    <div class="answer__text">
+                        <span v-if="progress.includes(i + 1)">{{ answer.title }}</span>
+                        <span v-if="clues.includes(i + 1) && !progress.includes(i + 1)">{{ format.cluedAnswer(answer.title) }}</span>
+                    </div>
                     <div class="answer__percent">
                         <div>
                             <span>{{ answer.percentage }}</span>
@@ -194,12 +206,12 @@ ion-back-button {
             font-weight: 500;
             color: var(--black);
             text-align: center;
-            opacity: 0;
+            //opacity: 0;
         }
 
-        &.opened .answer__text {
-            opacity: 1;
-        }
+        //&.opened .answer__text {
+        //    opacity: 1;
+        //}
     }
 }
 
