@@ -48,7 +48,7 @@
         "title": "Какая самая большая птица?",
         "answers": [
             { "title": "Страус", "percentage": 42, "synonyms": [] },
-            { "title": "Орёл", "percentage": 26, "synonyms": [] },
+            { "title": "Орел", "percentage": 26, "synonyms": [] },
             { "title": "Пингвин", "percentage": 21, "synonyms": [] },
             { "title": "Ястреб", "percentage": 6, "synonyms": [] },
             { "title": "Аист", "percentage": 5, "synonyms": [] }
@@ -67,7 +67,7 @@
     },
     {
         "id": 7,
-        "title": "Кто не устаёт громко кричать?",
+        "title": "Кто не устает громко кричать?",
         "answers": [
             { "title": "Начальник", "percentage": 30, "synonyms": [] },
             { "title": "Петух", "percentage": 25, "synonyms": [] },
@@ -89,7 +89,7 @@
     },
     {
         "id": 9,
-        "title": "Откуда вы узнаёте последние новости?",
+        "title": "Откуда вы узнаете последние новости?",
         "answers": [
             { "title": "Из интернета", "percentage": 30, "synonyms": ["Интернет", "Телеграм", "Социальные сети", "Вконтакте", "ВК"] },
             { "title": "От родственников", "percentage": 25, "synonyms": ["Девушка", "Парень", "Жена", "Муж", "Партнер", "Супруг"] },
@@ -107,6 +107,116 @@
             { "title": "Счастья", "percentage": 15, "synonyms": ["Счастье"] },
             { "title": "Детей", "percentage": 11, "synonyms": ["Дети"] },
             { "title": "Шубу", "percentage": 4, "synonyms": ["Шуба"] }
+        ]
+    },
+    {
+        "id": 11,
+        "title": "Чьими именами называют улицы?",
+        "answers": [
+            { "title": "Героев", "percentage": 43, "synonyms": ["Герой", "Герои"] },
+            { "title": "Писателей", "percentage": 27, "synonyms": ["Писатель", "Писатели"] },
+            { "title": "Поэтов", "percentage": 15, "synonyms": ["Поэт", "Поэты"] },
+            { "title": "Знаменитостей", "percentage": 12, "synonyms": ["Знаменитость", "Знаменитости"] },
+            { "title": "Ученых", "percentage": 3, "synonyms": ["Ученый", "Ученые"] }
+        ]
+    },
+    {
+        "id": 12,
+        "title": "Где сидят с открытым ртом?",
+        "answers": [
+            { "title": "В кино", "percentage": 38, "synonyms": ["Кино", "Кинотеатр"] },
+            { "title": "В цирке", "percentage": 25, "synonyms": ["Цирк"] },
+            { "title": "В театре", "percentage": 18, "synonyms": ["Театр"] },
+            { "title": "У стоматолога", "percentage": 12, "synonyms": ["Стоматолог"] },
+            { "title": "На лекции", "percentage": 7, "synonyms": ["Лекция", "Урок", "Школа", "Универ", "Университет", "Пара", "Пары"] }
+        ]
+    },
+    {
+        "id": 13,
+        "title": "Кто или что может свистеть?",
+        "answers": [
+            { "title": "Свисток", "percentage": 38, "synonyms": [] },
+            { "title": "Человек", "percentage": 25, "synonyms": [] },
+            { "title": "Чайник", "percentage": 18, "synonyms": [] },
+            { "title": "Птица", "percentage": 12, "synonyms": [] },
+            { "title": "Ветер", "percentage": 7, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 14,
+        "title": "Что может быть золотым?",
+        "answers": [
+            { "title": "Кольцо", "percentage": 38, "synonyms": [] },
+            { "title": "Золото", "percentage": 25, "synonyms": [] },
+            { "title": "Медаль", "percentage": 18, "synonyms": [] },
+            { "title": "Руки", "percentage": 12, "synonyms": [] },
+            { "title": "Зуб", "percentage": 7, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 15,
+        "title": "Куда ушли тараканы?",
+        "answers": [
+            { "title": "К соседям", "percentage": 38, "synonyms": ["Соседи", "Сосед", "Соседка"] },
+            { "title": "Домой", "percentage": 25, "synonyms": ["Дом"] },
+            { "title": "Спать", "percentage": 18, "synonyms": [] },
+            { "title": "Гулять", "percentage": 12, "synonyms": [] },
+            { "title": "В подвал", "percentage": 7, "synonyms": ["Подвал"] }
+        ]
+    },
+    {
+        "id": 16,
+        "title": "Где может быть пульт от ТВ?",
+        "answers": [
+            { "title": "Под диваном", "percentage": 50, "synonyms": ["Диван"] },
+            { "title": "В руке", "percentage": 26, "synonyms": ["Рука"] },
+            { "title": "Под подушкой", "percentage": 15, "synonyms": ["Подушка"] },
+            { "title": "У жены", "percentage": 8, "synonyms": ["Жена"] },
+            { "title": "Около телевизора", "percentage": 1, "synonyms": ["Телевизор"] }
+        ]
+    },
+    {
+        "id": 17,
+        "title": "Какой бывает сок?",
+        "answers": [
+            { "title": "Яблочный", "percentage": 39, "synonyms": [] },
+            { "title": "Апельсиновый", "percentage": 25, "synonyms": [] },
+            { "title": "Томатный", "percentage": 20, "synonyms": [] },
+            { "title": "Березовый", "percentage": 12, "synonyms": [] },
+            { "title": "Свежевыжатый", "percentage": 4, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 18,
+        "title": "Самый тяжёлый музыкальный инструмент?",
+        "answers": [
+            { "title": "Рояль", "percentage": 38, "synonyms": [] },
+            { "title": "Пианино", "percentage": 25, "synonyms": [] },
+            { "title": "Арфа", "percentage": 18, "synonyms": [] },
+            { "title": "Орган", "percentage": 12, "synonyms": [] },
+            { "title": "Барабан", "percentage": 7, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 19,
+        "title": "У какого знака зодиака скверный характер?",
+        "answers": [
+            { "title": "Скорпион", "percentage": 43, "synonyms": [] },
+            { "title": "Овен", "percentage": 27, "synonyms": [] },
+            { "title": "Козерог", "percentage": 15, "synonyms": [] },
+            { "title": "Лев", "percentage": 11, "synonyms": [] },
+            { "title": "Рак", "percentage": 4, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 20,
+        "title": "Где в квартире можно спрятать заначку?",
+        "answers": [
+            { "title": "В шкафу", "percentage": 43, "synonyms": ["Шкаф"] },
+            { "title": "В книге", "percentage": 27, "synonyms": ["Книга"] },
+            { "title": "Под матрасом", "percentage": 15, "synonyms": ["Матрас"] },
+            { "title": "Под ковром", "percentage": 11, "synonyms": ["Ковер"] },
+            { "title": "В туалете", "percentage": 4, "synonyms": ["Туалет"] }
         ]
     }
 ]
