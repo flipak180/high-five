@@ -218,5 +218,115 @@
             { "title": "Под ковром", "percentage": 11, "synonyms": ["Ковер"] },
             { "title": "В туалете", "percentage": 4, "synonyms": ["Туалет"] }
         ]
+    },
+    {
+        "id": 21,
+        "title": "Что актёры в кино не делают по настоящему?",
+        "answers": [
+            { "title": "Трюки", "percentage": 33, "synonyms": ["Трюк"] },
+            { "title": "Любят", "percentage": 22, "synonyms": ["Любовь"] },
+            { "title": "Занимаются любовью", "percentage": 19, "synonyms": ["Секс"] },
+            { "title": "Умирают", "percentage": 15, "synonyms": ["Смерть"] },
+            { "title": "Целуются", "percentage": 11, "synonyms": ["Поцелуй"] }
+        ]
+    },
+    {
+        "id": 22,
+        "title": "Какое из благ цивилизации пригодилось бы древнему человеку?",
+        "answers": [
+            { "title": "Телефон", "percentage": 56, "synonyms": [] },
+            { "title": "Электричество", "percentage": 22, "synonyms": [] },
+            { "title": "Огонь", "percentage": 10, "synonyms": [] },
+            { "title": "Спички", "percentage": 9, "synonyms": [] },
+            { "title": "Газ", "percentage": 3, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 23,
+        "title": "Что спрашивают в поезде у проводника?",
+        "answers": [
+            { "title": "Станцию", "percentage": 51, "synonyms": [] },
+            { "title": "Чай", "percentage": 22, "synonyms": ["Кипяток", "Кофе", "Вода"] },
+            { "title": "Про туалет", "percentage": 13, "synonyms": ["Туалет"] },
+            { "title": "Бельё", "percentage": 9, "synonyms": ["Постельное белье", "Одеяло"] },
+            { "title": "Про прибытие", "percentage": 5, "synonyms": ["Прибытие"] }
+        ]
+    },
+    {
+        "id": 24,
+        "title": "Почему в автобусе кричит женщина?",
+        "answers": [
+            { "title": "Проехала остановку", "percentage": 36, "synonyms": ["Проехала"] },
+            { "title": "Рожает", "percentage": 27, "synonyms": ["Роды"] },
+            { "title": "Наступили на ногу", "percentage": 15, "synonyms": ["Наступили"] },
+            { "title": "Обокрали", "percentage": 9, "synonyms": ["Украли", "Вор"] },
+            { "title": "Упала", "percentage": 3, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 25,
+        "title": "За что первым делом хватаются при пожаре?",
+        "answers": [
+            { "title": "За документы", "percentage": 36, "synonyms": ["Документы", "Паспорт"] },
+            { "title": "За ведро с водой", "percentage": 27, "synonyms": ["Ведро", "Вода"] },
+            { "title": "За телефон", "percentage": 20, "synonyms": ["Телефон"] },
+            { "title": "За голову", "percentage": 12, "synonyms": ["Голова"] },
+            { "title": "За огнетушитель", "percentage": 5, "synonyms": ["Огнетушитель"] }
+        ]
+    },
+    {
+        "id": 26,
+        "title": "Как за глаза называют начальника?",
+        "answers": [
+            { "title": "Шеф", "percentage": 43, "synonyms": [] },
+            { "title": "Босс", "percentage": 27, "synonyms": [] },
+            { "title": "Козёл", "percentage": 15, "synonyms": [] },
+            { "title": "Урод", "percentage": 11, "synonyms": [] },
+            { "title": "Дурак", "percentage": 4, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 27,
+        "title": "Где нужно давать сдачу?",
+        "answers": [
+            { "title": "В магазине", "percentage": 43, "synonyms": [] },
+            { "title": "В бою", "percentage": 23, "synonyms": [] },
+            { "title": "На кассе", "percentage": 19, "synonyms": [] },
+            { "title": "В транспорте", "percentage": 13, "synonyms": [] },
+            { "title": "В школе", "percentage": 2, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 28,
+        "title": "Как зовут героя русской сказки?",
+        "answers": [
+            { "title": "Иван", "percentage": 39, "synonyms": [] },
+            { "title": "Алёна или Елена", "percentage": 24, "synonyms": [] },
+            { "title": "Василиса", "percentage": 17, "synonyms": [] },
+            { "title": "Мария", "percentage": 11, "synonyms": [] },
+            { "title": "Анастасия", "percentage": 9, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 29,
+        "title": "Что нужно для домашнего аквариума?",
+        "answers": [
+            { "title": "Рыбки", "percentage": 41, "synonyms": [] },
+            { "title": "Вода", "percentage": 27, "synonyms": [] },
+            { "title": "Аквариум", "percentage": 19, "synonyms": [] },
+            { "title": "Водоросли", "percentage": 9, "synonyms": [] },
+            { "title": "Фильтр", "percentage": 4, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 30,
+        "title": "Игрушки для маленького мальчика?",
+        "answers": [
+            { "title": "Машинки", "percentage": 33, "synonyms": ["Машинка"] },
+            { "title": "Конструктор", "percentage": 31, "synonyms": ["Лего"] },
+            { "title": "Солдатики", "percentage": 22, "synonyms": ["Солдатик"] },
+            { "title": "Пистолеты", "percentage": 10, "synonyms": ["Пистолет", "Оружие", "Пистолет"] },
+            { "title": "Танки", "percentage": 4, "synonyms": ["Танк"] }
+        ]
     }
 ]
