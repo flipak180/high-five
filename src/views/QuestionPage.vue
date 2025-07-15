@@ -83,7 +83,12 @@ async function showClue(answerNumber: number) {
                 role: 'confirm',
                 handler: () => {
                     if (alreadyHasClue) {
+                        if (progressStore.score < PriceSystem.WORD_CLUE_PRICE) {
+                            return;
+                        }
+
                         progressStore.add(question.value.id, answerNumber);
+                        progressStore.score -= PriceSystem.WORD_CLUE_PRICE;
                     } else {
                         cluesStore.add(question.value.id, answerNumber)
                     }

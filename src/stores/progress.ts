@@ -4,8 +4,6 @@ import {useQuestionsStore} from "@/stores/questions";
 
 export const useProgressStore = defineStore('progress', () => {
 
-    const SCORE_PER_ANSWER = 10;
-
     // const progress = ref<{[key: number]: number[]}>({
     //     1: [1, 2, 3, 4, 5],
     //     2: [1, 3, 4],
@@ -27,12 +25,17 @@ export const useProgressStore = defineStore('progress', () => {
         if (questionId in progress.value) {
             if (!progress.value[questionId].includes(answerNumber)) {
                 progress.value[questionId].push(answerNumber)
-                score.value += SCORE_PER_ANSWER;
+                score.value += PriceSystem.WORD_AWARD;
             }
         } else {
             progress.value[questionId] = [answerNumber];
-            score.value += SCORE_PER_ANSWER;
+            score.value += PriceSystem.WORD_AWARD;
         }
+
+        if (progress.value[questionId].length === 5) {
+            score.value += PriceSystem.LAST_WORD_AWARD;
+        }
+
         questionsStore.update()
     }
 
