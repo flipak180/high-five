@@ -14,11 +14,11 @@
         "id": 2,
         "title": "Какая бывает пицца?",
         "answers": [
-            { "title": "Вкусная", "percentage": 44, "synonyms": [] },
-            { "title": "Большая", "percentage": 27, "synonyms": [] },
-            { "title": "Итальянская", "percentage": 14, "synonyms": [] },
-            { "title": "Круглая", "percentage": 11, "synonyms": [] },
-            { "title": "С грибами", "percentage": 4, "synonyms": ["Грибная"] }
+            { "title": "Пепперони", "percentage": 44, "synonyms": ["Пеперони", "Пепперонни"] },
+            { "title": "Маргарита", "percentage": 27, "synonyms": [] },
+            { "title": "Гавайская", "percentage": 14, "synonyms": ["С ананасами"] },
+            { "title": "Сырная", "percentage": 11, "synonyms": ["4 сыра"] },
+            { "title": "Грибная", "percentage": 4, "synonyms": ["С грибами"] }
         ]
     },
     {
@@ -27,7 +27,7 @@
         "answers": [
             { "title": "Печенье", "percentage": 40, "synonyms": [] },
             { "title": "Конфеты", "percentage": 25, "synonyms": [] },
-            { "title": "Бутерброд", "percentage": 19, "synonyms": [] },
+            { "title": "Бутерброд", "percentage": 19, "synonyms": ["Бутерброды"] },
             { "title": "Торт", "percentage": 11, "synonyms": [] },
             { "title": "Варенье", "percentage": 5, "synonyms": [] }
         ]
