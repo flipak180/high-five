@@ -45,12 +45,13 @@ async function submitAnswer() {
         .findIndex(answer => [answer.title, ...answer.synonyms].map(answer => answer.toLowerCase()).includes(userAnswer.value.toLowerCase()));
     if (answerIndex > -1) {
         progressStore.add(question.value.id, answerIndex + 1);
+        userAnswer.value = '';
+        await Haptics.notification({ type: NotificationType.Success });
     } else {
         error.value = true;
+        userAnswer.value = '';
         await Haptics.notification({ type: NotificationType.Error });
     }
-    userAnswer.value = '';
-    setFocus()
 }
 
 function setFocus() {
