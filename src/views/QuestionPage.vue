@@ -11,6 +11,7 @@ import {useProgressStore} from "@/stores/progress";
 import HeaderScore from "@/components/HeaderScore.vue";
 import {useCluesStore} from "@/stores/clues";
 import format from "@/misc/format";
+import {LETTER_CLUE_PRICE, WORD_CLUE_PRICE} from "@/misc/constants";
 
 const route = useRoute();
 const questionsStore = useQuestionsStore()
@@ -75,7 +76,9 @@ async function showClue(answerNumber: number) {
 
     const alert = await alertController.create({
         header: !alreadyHasClue ? 'Открыть букву?' : 'Открыть слово?',
-        message: !alreadyHasClue ? 'Это будет стоить 10 монет.' : 'Это будет стоить 20 монет.',
+        message: !alreadyHasClue
+            ? `Это будет стоить ${LETTER_CLUE_PRICE} монет.`
+            : `Это будет стоить ${WORD_CLUE_PRICE} монет.`,
         buttons: [
             {
                 text: 'Нет',
@@ -86,12 +89,12 @@ async function showClue(answerNumber: number) {
                 role: 'confirm',
                 handler: () => {
                     if (alreadyHasClue) {
-                        if (progressStore.score < PriceSystem.WORD_CLUE_PRICE) {
+                        if (progressStore.score < WORD_CLUE_PRICE) {
                             return;
                         }
 
                         progressStore.add(question.value.id, answerNumber);
-                        progressStore.score -= PriceSystem.WORD_CLUE_PRICE;
+                        progressStore.score -= WORD_CLUE_PRICE;
                     } else {
                         cluesStore.add(question.value.id, answerNumber)
                     }

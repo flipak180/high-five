@@ -1,6 +1,7 @@
 import {defineStore} from "pinia";
 import {computed, ref} from "vue";
 import {useQuestionsStore} from "@/stores/questions";
+import {LAST_WORD_AWARD, WORD_AWARD} from "@/misc/constants";
 
 export const useProgressStore = defineStore('progress', () => {
 
@@ -25,15 +26,15 @@ export const useProgressStore = defineStore('progress', () => {
         if (questionId in progress.value) {
             if (!progress.value[questionId].includes(answerNumber)) {
                 progress.value[questionId].push(answerNumber)
-                score.value += PriceSystem.WORD_AWARD;
+                score.value += WORD_AWARD;
             }
         } else {
             progress.value[questionId] = [answerNumber];
-            score.value += PriceSystem.WORD_AWARD;
+            score.value += WORD_AWARD;
         }
 
         if (progress.value[questionId].length === 5) {
-            score.value += PriceSystem.LAST_WORD_AWARD;
+            score.value += LAST_WORD_AWARD;
         }
 
         questionsStore.update()

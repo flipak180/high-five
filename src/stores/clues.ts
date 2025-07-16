@@ -1,6 +1,7 @@
 import {defineStore} from "pinia";
 import {ref} from "vue";
 import {useProgressStore} from "@/stores/progress";
+import {LETTER_CLUE_PRICE} from "@/misc/constants";
 
 export const useCluesStore = defineStore('clues', () => {
 
@@ -15,18 +16,18 @@ export const useCluesStore = defineStore('clues', () => {
     const clues = ref<{[key: string]: number[]}>({})
 
     function add(questionId: number, answerNumber: number) {
-        if (progressStore.score < PriceSystem.LETTER_CLUE_PRICE) {
+        if (progressStore.score < LETTER_CLUE_PRICE) {
             return;
         }
 
         if (questionId in clues.value) {
             if (!clues.value[questionId].includes(answerNumber)) {
                 clues.value[questionId].push(answerNumber)
-                progressStore.score -= PriceSystem.LETTER_CLUE_PRICE;
+                progressStore.score -= LETTER_CLUE_PRICE;
             }
         } else {
             clues.value[questionId] = [answerNumber];
-            progressStore.score -= PriceSystem.LETTER_CLUE_PRICE;
+            progressStore.score -= LETTER_CLUE_PRICE;
         }
     }
 
