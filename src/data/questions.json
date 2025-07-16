@@ -328,5 +328,225 @@
             { "title": "Пистолеты", "percentage": 10, "synonyms": ["Пистолет", "Оружие", "Пистолет"] },
             { "title": "Танки", "percentage": 4, "synonyms": ["Танк"] }
         ]
+    },
+    {
+        "id": 31,
+        "title": "Стихи какого поэта легче всего учить наизусть?",
+        "answers": [
+            { "title": "Пушкина", "percentage": 43, "synonyms": ["Пушкин"] },
+            { "title": "Есенина", "percentage": 23, "synonyms": ["Есенин"] },
+            { "title": "Барто", "percentage": 18, "synonyms": [] },
+            { "title": "Лермонтова", "percentage": 12, "synonyms": ["Лермонтов"] },
+            { "title": "Маяковского", "percentage": 4, "synonyms": ["Маяковский"] }
+        ]
+    },
+    {
+        "id": 32,
+        "title": "Кто или что бывает чёрно-белым?",
+        "answers": [
+            { "title": "Кино", "percentage": 52, "synonyms": ["Фильм"] },
+            { "title": "Зебра", "percentage": 28, "synonyms": [] },
+            { "title": "Телевизор", "percentage": 11, "synonyms": [] },
+            { "title": "Фотография", "percentage": 8, "synonyms": ["Снимок", "Фото"] },
+            { "title": "Жизнь", "percentage": 1, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 33,
+        "title": "Что обычно маринуют?",
+        "answers": [
+            { "title": "Огурцы", "percentage": 64, "synonyms": ["Огурец"] },
+            { "title": "Грибы", "percentage": 14, "synonyms": ["Гриб"] },
+            { "title": "Помидоры", "percentage": 10, "synonyms": ["Помидор"] },
+            { "title": "Мясо", "percentage": 7, "synonyms": ["Шашлык"] },
+            { "title": "Капусту", "percentage": 5, "synonyms": ["Капуста"] }
+        ]
+    },
+    {
+        "id": 34,
+        "title": "Что делают из молока?",
+        "answers": [
+            { "title": "Сыр", "percentage": 42, "synonyms": [] },
+            { "title": "Творог", "percentage": 23, "synonyms": [] },
+            { "title": "Кефир", "percentage": 19, "synonyms": [] },
+            { "title": "Сметану", "percentage": 13, "synonyms": ["Сметана"] },
+            { "title": "Кашу", "percentage": 3, "synonyms": ["Каша", "Овсянка"] }
+        ]
+    },
+    {
+        "id": 35,
+        "title": "Что лежит в кармане?",
+        "answers": [
+            { "title": "Телефон", "percentage": 43, "synonyms": [] },
+            { "title": "Деньги", "percentage": 23, "synonyms": [] },
+            { "title": "Ключи", "percentage": 19, "synonyms": [] },
+            { "title": "Платок", "percentage": 13, "synonyms": [] },
+            { "title": "Кошелёк", "percentage": 2, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 36,
+        "title": "Какая ягода растёт в лесу?",
+        "answers": [
+            { "title": "Земляника", "percentage": 46, "synonyms": [] },
+            { "title": "Малина", "percentage": 25, "synonyms": [] },
+            { "title": "Ежевика", "percentage": 14, "synonyms": [] },
+            { "title": "Черника", "percentage": 10, "synonyms": [] },
+            { "title": "Брусника", "percentage": 5, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 37,
+        "title": "Фильмы, в которых снимался Евгений Леонов?",
+        "answers": [
+            { "title": "Джентльмены удачи", "percentage": 32, "synonyms": [] },
+            { "title": "Полосатый рейс", "percentage": 19, "synonyms": [] },
+            { "title": "Афоня", "percentage": 15, "synonyms": [] },
+            { "title": "Большая перемена", "percentage": 13, "synonyms": [] },
+            { "title": "Кин-дза-дза", "percentage": 9, "synonyms": ["Кин дза дза", "Киндзадза"] }
+        ]
+    },
+    {
+        "id": 38,
+        "title": "Какую военную песню обожают все русские?",
+        "answers": [
+            { "title": "Катюша", "percentage": 38, "synonyms": [] },
+            { "title": "День победы", "percentage": 25, "synonyms": [] },
+            { "title": "Три танкиста", "percentage": 17, "synonyms": ["3 танкиста"] },
+            { "title": "Комбат", "percentage": 13, "synonyms": [] },
+            { "title": "Смуглянка", "percentage": 7, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 39,
+        "title": "Из чего, кроме морковки, можно сделать нос снеговику?",
+        "answers": [
+            { "title": "Палка", "percentage": 38, "synonyms": [] },
+            { "title": "Огурец", "percentage": 25, "synonyms": [] },
+            { "title": "Шишка", "percentage": 18, "synonyms": [] },
+            { "title": "Картошка", "percentage": 12, "synonyms": [] },
+            { "title": "Сосулька", "percentage": 7, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 40,
+        "title": "Что может быть вязаным?",
+        "answers": [
+            { "title": "Шарф", "percentage": 38, "synonyms": [] },
+            { "title": "Носки", "percentage": 25, "synonyms": ["Носок"] },
+            { "title": "Свитер", "percentage": 24, "synonyms": [] },
+            { "title": "Шапка", "percentage": 10, "synonyms": [] },
+            { "title": "Варежки", "percentage": 3, "synonyms": ["Варежка", "Перчатка", "Рукавица"] }
+        ]
+    },
+    {
+        "id": 41,
+        "title": "Самая вкусная начинка для пирожков?",
+        "answers": [
+            { "title": "Капуста", "percentage": 35, "synonyms": [] },
+            { "title": "Мясо", "percentage": 23, "synonyms": [] },
+            { "title": "Творог", "percentage": 16, "synonyms": [] },
+            { "title": "Картошка", "percentage": 17, "synonyms": [] },
+            { "title": "Повидло", "percentage": 9, "synonyms": ["Джем", "Варенье"] }
+        ]
+    },
+    {
+        "id": 42,
+        "title": "Какое желание вы бы попросили у золотой рыбки?",
+        "answers": [
+            { "title": "Денег", "percentage": 43, "synonyms": [] },
+            { "title": "Здоровья", "percentage": 23, "synonyms": ["Здоровье"] },
+            { "title": "Счастья", "percentage": 19, "synonyms": ["Счастье"] },
+            { "title": "Квартиру", "percentage": 13, "synonyms": ["Квартира"] },
+            { "title": "Машину", "percentage": 2, "synonyms": ["Машина"] }
+        ]
+    },
+    {
+        "id": 43,
+        "title": "Как вежливо называют полную женщину?",
+        "answers": [
+            { "title": "Пышечка", "percentage": 43, "synonyms": [] },
+            { "title": "Пончик", "percentage": 27, "synonyms": [] },
+            { "title": "Помпушка", "percentage": 15, "synonyms": [] },
+            { "title": "Пухленькая", "percentage": 11, "synonyms": [] },
+            { "title": "Булочка", "percentage": 4, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 44,
+        "title": "Что делают ранним утром?",
+        "answers": [
+            { "title": "Спят", "percentage": 32, "synonyms": [] },
+            { "title": "Просыпаются", "percentage": 28, "synonyms": [] },
+            { "title": "Умываются", "percentage": 19, "synonyms": [] },
+            { "title": "Делают зарядку", "percentage": 20, "synonyms": [] },
+            { "title": "Пьют кофе/чай", "percentage": 1, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 45,
+        "title": "Что есть в кабинете химии?",
+        "answers": [
+            { "title": "Колбы", "percentage": 37, "synonyms": ["Колба"] },
+            { "title": "Пробирки", "percentage": 32, "synonyms": ["Пробирка"] },
+            { "title": "Реактивы", "percentage": 18, "synonyms": ["Реактив"] },
+            { "title": "Таблица Менделеева", "percentage": 11, "synonyms": ["Таблица"] },
+            { "title": "Доска", "percentage": 2, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 46,
+        "title": "Что бывает деревянным?",
+        "answers": [
+            { "title": "Стол", "percentage": 41, "synonyms": [] },
+            { "title": "Стул", "percentage": 22, "synonyms": [] },
+            { "title": "Дом", "percentage": 18, "synonyms": [] },
+            { "title": "Ложка", "percentage": 12, "synonyms": [] },
+            { "title": "Пол", "percentage": 7, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 47,
+        "title": "Человек хлопает себя по лбу и разворачивается. Что он забыл дома?",
+        "answers":  [
+            { "title": "Телефон", "percentage": 27, "synonyms": [] },
+            { "title": "Ключи", "percentage": 19, "synonyms": [] },
+            { "title": "Деньги", "percentage": 13, "synonyms": [] },
+            { "title": "Выключить электроприбор", "percentage": 9, "synonyms": ["Выключить"] },
+            { "title": "Документы", "percentage": 5, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 48,
+        "title": "Какую породу собак предпочитают дамы?",
+        "answers": [
+            { "title": "Пудель", "percentage": 29, "synonyms": [] },
+            { "title": "Чихуахуа", "percentage": 19, "synonyms": [] },
+            { "title": "Корги", "percentage": 13, "synonyms": [] },
+            { "title": "Мопс", "percentage": 9, "synonyms": [] },
+            { "title": "Такса", "percentage": 7, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 49,
+        "title": "Какой человек с именем Владимир самый известный?",
+        "answers": [
+            { "title": "Путин", "percentage": 37, "synonyms": [] },
+            { "title": "Высоцкий", "percentage": 20, "synonyms": [] },
+            { "title": "Ленин", "percentage": 16, "synonyms": [] },
+            { "title": "Маяковский", "percentage": 11, "synonyms": [] },
+            { "title": "Жириновский", "percentage": 5, "synonyms": [] }
+        ]
+    },
+    {
+        "id": 50,
+        "title": "Что говорит иностранец после первой рюмки водки?",
+        "answers": [
+            { "title": "Хорошо", "percentage": 35, "synonyms": [] },
+            { "title": "Ещё", "percentage": 22, "synonyms": [] },
+            { "title": "Хватит", "percentage": 17, "synonyms": [] },
+            { "title": "Горько", "percentage": 10, "synonyms": [] },
+            { "title": "Тост", "percentage": 5, "synonyms": [] }
+        ]
     }
 ]
