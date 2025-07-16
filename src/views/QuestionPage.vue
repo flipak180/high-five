@@ -57,7 +57,9 @@ function setFocus() {
     if (!autofocus.value) {
         return;
     }
-    autofocus.value.focus()
+    setTimeout(function() {
+        autofocus.value.focus()
+    }, 10);
 }
 
 async function showClue(answerNumber: number) {
@@ -113,7 +115,7 @@ async function showClue(answerNumber: number) {
         </ion-header>
         <ion-content :fullscreen="true" class="ion-padding">
             <div class="answers">
-                <div class="answer" v-for="(answer, i) in question?.answers" :key="answer.id" :class="{ opened: progress.includes(i + 1) }" @click="showClue(i + 1)">
+                <div class="answer" v-for="(answer, i) in question?.answers" :key="answer.id" :class="{ opened: progress.includes(i + 1) }">
                     <div class="answer__text">
                         <span v-if="progress.includes(i + 1)">{{ answer.title }}</span>
                         <span v-if="clues.includes(i + 1) && !progress.includes(i + 1)">{{ format.cluedAnswer(answer.title) }}</span>
@@ -124,7 +126,7 @@ async function showClue(answerNumber: number) {
                             <small>%</small>
                         </div>
                     </div>
-                    <div class="answer__clue" v-if="!progress.includes(i + 1)">
+                    <div class="answer__clue" v-if="!progress.includes(i + 1)" @click="showClue(i + 1)">
                         <FontAwesomeIcon class="form__icon" :icon="faQuestion" />
                     </div>
                 </div>
