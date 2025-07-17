@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {alertController, IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonToolbar} from '@ionic/vue';
-import {useRoute} from "vue-router";
+import {useRoute, useRouter} from "vue-router";
 import {computed, onMounted, Ref, ref, useTemplateRef} from "vue";
 import {Haptics, NotificationType} from "@capacitor/haptics";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
@@ -14,6 +14,7 @@ import format from "@/misc/format";
 import {LETTER_CLUE_PRICE, WORD_CLUE_PRICE} from "@/misc/constants";
 
 const route = useRoute();
+const router = useRouter();
 const questionsStore = useQuestionsStore()
 const progressStore = useProgressStore()
 const cluesStore = useCluesStore()
@@ -52,6 +53,12 @@ async function submitAnswer() {
         error.value = true;
         userAnswer.value = '';
         await Haptics.notification({ type: NotificationType.Error });
+    }
+
+    if (progress.value.length >= 5) {
+        setTimeout(() => {
+            router.back()
+        }, 1000)
     }
 }
 
