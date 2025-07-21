@@ -3,10 +3,10 @@
         "id": 1,
         "title": "Что делает охранник на работе?",
         "answers": [
-            { "title": "Спит", "percentage": 38, "synonyms": [] },
-            { "title": "Охраняет", "percentage": 26, "synonyms": [] },
+            { "title": "Спит", "percentage": 38, "synonyms": ["Дремлет", "Храпит"] },
+            { "title": "Охраняет", "percentage": 26, "synonyms": ["Сторожит"] },
             { "title": "Работает", "percentage": 19, "synonyms": [] },
-            { "title": "Ходит", "percentage": 14, "synonyms": [] },
+            { "title": "Ходит", "percentage": 14, "synonyms": ["Обходит"] },
             { "title": "Сидит", "percentage": 3, "synonyms": [] }
         ]
     },
@@ -16,9 +16,9 @@
         "answers": [
             { "title": "Пепперони", "percentage": 44, "synonyms": ["Пеперони", "Пепперонни"] },
             { "title": "Маргарита", "percentage": 27, "synonyms": [] },
-            { "title": "Гавайская", "percentage": 14, "synonyms": ["С ананасами"] },
-            { "title": "Сырная", "percentage": 11, "synonyms": ["4 сыра"] },
-            { "title": "Грибная", "percentage": 4, "synonyms": ["С грибами"] }
+            { "title": "Вкусная", "percentage": 11, "synonyms": ["4 сыра", "С сыром"] },
+            { "title": "Итальянская", "percentage": 14, "synonyms": [] },
+            { "title": "Круглая", "percentage": 4, "synonyms": [] }
         ]
     },
     {
@@ -26,10 +26,10 @@
         "title": "Что едят с чаем?",
         "answers": [
             { "title": "Печенье", "percentage": 40, "synonyms": [] },
-            { "title": "Конфеты", "percentage": 25, "synonyms": [] },
+            { "title": "Конфеты", "percentage": 25, "synonyms": ["Конфету"] },
             { "title": "Бутерброд", "percentage": 19, "synonyms": ["Бутерброды"] },
             { "title": "Торт", "percentage": 11, "synonyms": [] },
-            { "title": "Варенье", "percentage": 5, "synonyms": [] }
+            { "title": "Варенье", "percentage": 5, "synonyms": ["Джем"] }
         ]
     },
     {
@@ -69,7 +69,7 @@
         "id": 7,
         "title": "Кто не устает громко кричать?",
         "answers": [
-            { "title": "Начальник", "percentage": 30, "synonyms": [] },
+            { "title": "Начальник", "percentage": 30, "synonyms": ["Босс", "Директор", "Руководитель", "Руководство"] },
             { "title": "Петух", "percentage": 25, "synonyms": [] },
             { "title": "Учитель", "percentage": 20, "synonyms": [] },
             { "title": "Оратор", "percentage": 15, "synonyms": [] },
@@ -80,7 +80,7 @@
         "id": 8,
         "title": "Что стоит на кухне?",
         "answers": [
-            { "title": "Плита", "percentage": 42, "synonyms": [] },
+            { "title": "Плита", "percentage": 42, "synonyms": ["Духовка"] },
             { "title": "Холодильник", "percentage": 23, "synonyms": [] },
             { "title": "Стол", "percentage": 19, "synonyms": [] },
             { "title": "Микроволновая печь", "percentage": 13, "synonyms": ["Микроволновка"] },
@@ -91,22 +91,22 @@
         "id": 9,
         "title": "Откуда вы узнаете последние новости?",
         "answers": [
-            { "title": "Из интернета", "percentage": 30, "synonyms": ["Интернет", "Телеграм", "Социальные сети", "Вконтакте", "ВК"] },
-            { "title": "От родственников", "percentage": 25, "synonyms": ["Девушка", "Парень", "Жена", "Муж", "Партнер", "Супруг"] },
-            { "title": "От друзей", "percentage": 20, "synonyms": ["Друзья", "Друг", "Коллеги", "Коллега"] },
-            { "title": "Телевизор", "percentage": 15, "synonyms": [] },
-            { "title": "Из газет", "percentage": 10, "synonyms": [] }
+            { "title": "Интернет", "percentage": 30, "synonyms": ["Из интернета", "Телеграм", "Социальные сети", "Вконтакте", "ВК"] },
+            { "title": "Родственники", "percentage": 25, "synonyms": ["От родственников", "Девушка", "Парень", "Жена", "Муж", "Партнер", "Супруг"] },
+            { "title": "Друзья", "percentage": 20, "synonyms": ["От друзей", "Друг", "Коллеги", "Коллега"] },
+            { "title": "Телевизор", "percentage": 15, "synonyms": ["По телевизору", "Из телевизора"] },
+            { "title": "Газет", "percentage": 10, "synonyms": ["Из газет"] }
         ]
     },
     {
         "id": 10,
         "title": "Чего хотят женщины?",
         "answers": [
-            { "title": "Любви", "percentage": 43, "synonyms": ["Любовь"] },
-            { "title": "Денег", "percentage": 27, "synonyms": ["Деньги"] },
-            { "title": "Счастья", "percentage": 15, "synonyms": ["Счастье"] },
-            { "title": "Детей", "percentage": 11, "synonyms": ["Дети"] },
-            { "title": "Шубу", "percentage": 4, "synonyms": ["Шуба"] }
+            { "title": "Любви", "percentage": 43, "synonyms": ["Любовь", "Романтики", "Отношений", "Заботы", "Ласки"] },
+            { "title": "Денег", "percentage": 27, "synonyms": ["Деньги", "Финансов", "Золота"] },
+            { "title": "Счастья", "percentage": 15, "synonyms": ["Счастье", "Радости"] },
+            { "title": "Детей", "percentage": 11, "synonyms": ["Дети", "Семью"] },
+            { "title": "Шубу", "percentage": 4, "synonyms": ["Шуба", "Одежду"] }
         ]
     },
     {

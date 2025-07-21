@@ -30,6 +30,7 @@ const clues = computed<number[]>(() => {
 
 const autofocus: Ref = useTemplateRef('autofocus');
 const userAnswer = ref('')
+const highlightedAnswerIndex = ref<number|null>(null)
 const error = ref<boolean>(false)
 
 onMounted(async () => {
@@ -46,6 +47,12 @@ async function submitAnswer() {
     const answerIndex = question.value.answers
         .findIndex(answer => [answer.title, ...answer.synonyms].map(answer => answer.toLowerCase()).includes(userAnswer.value.toLowerCase()));
     if (answerIndex > -1) {
+        if (progress.value.includes(answerIndex + 1)) {
+            highlightedAnswerIndex.value = answerIndex;
+            userAnswer.value = '';
+            await Haptics.notification({ type: NotificationType.Warning });
+            return;
+        }
         progressStore.add(question.value.id, answerIndex + 1);
         userAnswer.value = '';
         await Haptics.notification({ type: NotificationType.Success });
@@ -126,7 +133,7 @@ async function showClue(answerNumber: number) {
         </ion-header>
         <ion-content :fullscreen="true" class="ion-padding">
             <div class="answers">
-                <div class="answer" v-for="(answer, i) in question?.answers" :key="answer.id" :class="{ opened: progress.includes(i + 1) }">
+                <div class="answer" v-for="(answer, i) in question?.answers" :key="answer.id" :class="{ opened: progress.includes(i + 1), highlighted: highlightedAnswerIndex === i }">
                     <div class="answer__text">
                         <span v-if="progress.includes(i + 1)">{{ answer.title }}</span>
                         <span v-if="clues.includes(i + 1) && !progress.includes(i + 1)">{{ format.cluedAnswer(answer.title) }}</span>
@@ -230,6 +237,10 @@ ion-back-button {
         //&.opened .answer__text {
         //    opacity: 1;
         //}
+
+        &.highlighted {
+            animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+        }
     }
 }
 
@@ -279,6 +290,24 @@ ion-back-button {
             aspect-ratio: 1 / 1;
             color: var(--black);
         }
+    }
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
     }
 }
 </style>
