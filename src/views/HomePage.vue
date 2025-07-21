@@ -10,10 +10,12 @@ import {useQuestionsStore} from "@/stores/questions";
 import {useProgressStore} from "@/stores/progress";
 import HeaderScore from "@/components/HeaderScore.vue";
 import {useCluesStore} from "@/stores/clues";
+import {ref} from "vue";
 
 const questionsStore = useQuestionsStore()
 const progressStore = useProgressStore()
 const cluesStore = useCluesStore()
+const totalClicks = ref(0)
 
 function handleClick(question: Question) {
     if (question.status === QuestionStatuses.LOCKED) {
@@ -24,8 +26,11 @@ function handleClick(question: Question) {
 }
 
 function resetProgress() {
-    progressStore.reset()
-    cluesStore.reset()
+    totalClicks.value++;
+    if (totalClicks.value >= 5) {
+        progressStore.reset()
+        cluesStore.reset()
+    }
 }
 </script>
 
