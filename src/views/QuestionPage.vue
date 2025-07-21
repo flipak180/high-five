@@ -53,6 +53,9 @@ async function submitAnswer() {
     if (answerIndex > -1) {
         if (progress.value.includes(answerIndex + 1)) {
             highlightedAnswerIndex.value = answerIndex;
+            setTimeout(() => {
+                highlightedAnswerIndex.value = null;
+            }, 1500)
             userAnswer.value = '';
             await Haptics.notification({ type: NotificationType.Warning });
             return;
