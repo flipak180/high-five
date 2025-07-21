@@ -138,17 +138,17 @@
             { "title": "Свисток", "percentage": 38, "synonyms": [] },
             { "title": "Человек", "percentage": 25, "synonyms": [] },
             { "title": "Чайник", "percentage": 18, "synonyms": [] },
-            { "title": "Птица", "percentage": 12, "synonyms": [] },
-            { "title": "Ветер", "percentage": 7, "synonyms": [] }
+            { "title": "Птица", "percentage": 12, "synonyms": ["Соловей"] },
+            { "title": "Ветер", "percentage": 7, "synonyms": ["Сквозняк"] }
         ]
     },
     {
         "id": 14,
         "title": "Что может быть золотым?",
         "answers": [
-            { "title": "Кольцо", "percentage": 38, "synonyms": [] },
+            { "title": "Кольцо", "percentage": 38, "synonyms": ["Украшение"] },
             { "title": "Золото", "percentage": 25, "synonyms": [] },
-            { "title": "Медаль", "percentage": 18, "synonyms": [] },
+            { "title": "Медаль", "percentage": 18, "synonyms": ["Кубок", "Трофей", "Приз"] },
             { "title": "Руки", "percentage": 12, "synonyms": [] },
             { "title": "Зуб", "percentage": 7, "synonyms": [] }
         ]

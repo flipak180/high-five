@@ -5,4 +5,5 @@ test('Открыта первая буква', () => {
     expect(format.cluedAnswer('Апельсин')).toBe('А_______')
     expect(format.cluedAnswer('Из магазина')).toBe('Из м_______')
     expect(format.cluedAnswer('Под тем самым деревом')).toBe('Под т__ _____ _______')
+    expect(format.cluedAnswer('Около телевизора')).toBe('Около т_________')
 })
