@@ -12,6 +12,7 @@ import HeaderScore from "@/components/HeaderScore.vue";
 import {useCluesStore} from "@/stores/clues";
 import format from "@/misc/format";
 import {LETTER_CLUE_PRICE, WORD_CLUE_PRICE} from "@/misc/constants";
+import {Keyboard} from "@capacitor/keyboard";
 
 const route = useRoute();
 const router = useRouter();
@@ -34,6 +35,9 @@ const highlightedAnswerIndex = ref<number|null>(null)
 const error = ref<boolean>(false)
 
 onMounted(async () => {
+    Keyboard.setAccessoryBarVisible({
+        isVisible: false,
+    })
     progressStore.create(question.value.id);
 
     setFocus()
