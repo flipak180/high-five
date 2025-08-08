@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {IonContent, IonPage} from '@ionic/vue';
 import TheCard from "@/components/TheCard.vue";
+import router from "@/misc/router";
 </script>
 
 <template>
@@ -16,7 +17,7 @@ import TheCard from "@/components/TheCard.vue";
                             Авторское
                         </div>
                     </the-card>
-                    <the-card button class="game-mode" style="background-color: var(--yellow)">
+                    <the-card button class="game-mode" style="background-color: var(--yellow)" @click="router.push({ name: 'classic' })">
                         <div class="game-mode__title">
                             Классика
                         </div>

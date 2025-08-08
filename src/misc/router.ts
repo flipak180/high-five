@@ -4,6 +4,7 @@ import QuestionPage from "@/views/QuestionPage.vue";
 import HomePage from "@/views/HomePage.vue";
 import ClassicPage from "@/views/ClassicPage.vue";
 import ThemesPage from "@/views/ThemesPage.vue";
+import AuthorsPage from "@/views/AuthorsPage.vue";
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -24,6 +25,11 @@ const routes: Array<RouteRecordRaw> = [
         path: '/classic',
         name: 'classic',
         component: ClassicPage
+    },
+    {
+        path: '/authors',
+        name: 'authors',
+        component: AuthorsPage
     },
     {
         path: '/questions/:id',

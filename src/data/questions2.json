@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "id": 51,
         "title": "Цитрус",
         "answers": [
             { "title": "Апельсин", "percentage": 40, "synonyms": [] },
@@ -11,7 +11,7 @@
         ]
     },
     {
-        "id": 2,
+        "id": 52,
         "title": "Космическое тело",
         "answers": [
             { "title": "Планета", "percentage": 35, "synonyms": [] },
@@ -22,7 +22,7 @@
         ]
     },
     {
-        "id": 3,
+        "id": 53,
         "title": "Карточные игры",
         "answers": [
             { "title": "Покер", "percentage": 40, "synonyms": [] },
@@ -33,18 +33,18 @@
         ]
     },
     {
-        "id": 4,
+        "id": 54,
         "title": "Компоненты компьютера",
         "answers": [
             { "title": "Процессор", "percentage": 30, "synonyms": [] },
             { "title": "Видеокарта", "percentage": 25, "synonyms": ["Видяха"] },
             { "title": "Оперативная память", "percentage": 20, "synonyms": ["Оперативка"] },
-            { "title": "Жёсткий диск", "percentage": 15, "synonyms": ["Винчестер", "Винч", "Винт"] },
+            { "title": "Жесткий диск", "percentage": 15, "synonyms": ["Винчестер", "Винч", "Винт", "Диск"] },
             { "title": "Материнская плата", "percentage": 10, "synonyms": ["Материнка", "Плата", "Мамка"] }
         ]
     },
     {
-        "id": 5,
+        "id": 55,
         "title": "Направление в живописи",
         "answers": [
             { "title": "Импрессионизм", "percentage": 30, "synonyms": [] },
@@ -55,18 +55,18 @@
         ]
     },
     {
-        "id": 6,
+        "id": 56,
         "title": "Цветы для букета",
         "answers": [
             { "title": "Роза", "percentage": 40, "synonyms": [] },
             { "title": "Тюльпан", "percentage": 25, "synonyms": [] },
             { "title": "Хризантема", "percentage": 15, "synonyms": [] },
             { "title": "Пион", "percentage": 10, "synonyms": [] },
-            { "title": "Гвоздики", "percentage": 10, "synonyms": [] }
+            { "title": "Гвоздики", "percentage": 10, "synonyms": ["Гвоздика"] }
         ]
     },
     {
-        "id": 7,
+        "id": 57,
         "title": "Страны Южной Америки",
         "answers": [
             { "title": "Бразилия", "percentage": 35, "synonyms": [] },
@@ -77,7 +77,7 @@
         ]
     },
     {
-        "id": 8,
+        "id": 58,
         "title": "Поэты ХХ века",
         "answers": [
             { "title": "Есенин", "percentage": 30, "synonyms": ["Сергей Есенин"] },
@@ -88,7 +88,7 @@
         ]
     },
     {
-        "id": 9,
+        "id": 59,
         "title": "Шумное устройство в доме",
         "answers": [
             { "title": "Пылесос", "percentage": 35, "synonyms": [] },
@@ -99,7 +99,7 @@
         ]
     },
     {
-        "id": 10,
+        "id": 60,
         "title": "Событие, заставляющее понервничать",
         "answers": [
             { "title": "Экзамен", "percentage": 30, "synonyms": ["ЕГЭ", "Диплом"] },
@@ -110,7 +110,7 @@
         ]
     },
     {
-        "id": 11,
+        "id": 61,
         "title": "Это есть в аптечке",
         "answers": [
             { "title": "Лекарства", "percentage": 30, "synonyms": ["Таблетки", "Витамины"] },

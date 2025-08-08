@@ -6,6 +6,8 @@ import {Theme} from "@/misc/interfaces";
 import router from "@/misc/router";
 import helpers from "@/misc/helpers";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import HeaderScore from "@/components/HeaderScore.vue";
+import TheBackButton from "@/components/TheBackButton.vue";
 
 function handleClick(theme: Theme) {
     router.push({ name: 'theme', params: { id: theme.id } })
@@ -14,9 +16,11 @@ function handleClick(theme: Theme) {
 
 <template>
     <ion-page>
-        <ion-header :translucent="true">
+        <ion-header>
             <ion-toolbar>
+                <TheBackButton slot="start" />
                 <ion-title>Выбор темы</ion-title>
+                <HeaderScore slot="end" />
             </ion-toolbar>
         </ion-header>
         <ion-content :fullscreen="true" class="ion-padding">
