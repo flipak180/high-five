@@ -36,7 +36,6 @@ npm-debug.log*
 /resources/android
 /resources/ios
 .env.local
-/public/assets
 /public/manifest.webmanifest
 node_modules/
 /test-results/

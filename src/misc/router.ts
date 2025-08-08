@@ -3,6 +3,7 @@ import {RouteRecordRaw} from 'vue-router';
 import QuestionPage from "@/views/QuestionPage.vue";
 import HomePage from "@/views/HomePage.vue";
 import ClassicPage from "@/views/ClassicPage.vue";
+import ThemesPage from "@/views/ThemesPage.vue";
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -13,6 +14,11 @@ const routes: Array<RouteRecordRaw> = [
         path: '/home',
         name: 'home',
         component: HomePage
+    },
+    {
+        path: '/themes',
+        name: 'themes',
+        component: ThemesPage
     },
     {
         path: '/classic',
