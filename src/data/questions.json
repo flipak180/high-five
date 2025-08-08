@@ -188,7 +188,7 @@
     },
     {
         "id": 18,
-        "title": "Самый тяжёлый музыкальный инструмент?",
+        "title": "Самый тяжелый музыкальный инструмент?",
         "answers": [
             { "title": "Рояль", "percentage": 38, "synonyms": [] },
             { "title": "Пианино", "percentage": 25, "synonyms": [] },
@@ -221,7 +221,7 @@
     },
     {
         "id": 21,
-        "title": "Что актёры в кино не делают по настоящему?",
+        "title": "Что актеры в кино не делают по настоящему?",
         "answers": [
             { "title": "Трюки", "percentage": 33, "synonyms": ["Трюк"] },
             { "title": "Любят", "percentage": 22, "synonyms": ["Любовь"] },
@@ -248,7 +248,7 @@
             { "title": "Станцию", "percentage": 51, "synonyms": [] },
             { "title": "Чай", "percentage": 22, "synonyms": ["Кипяток", "Кофе", "Вода"] },
             { "title": "Про туалет", "percentage": 13, "synonyms": ["Туалет"] },
-            { "title": "Бельё", "percentage": 9, "synonyms": ["Постельное белье", "Одеяло"] },
+            { "title": "Белье", "percentage": 9, "synonyms": ["Постельное белье", "Одеяло"] },
             { "title": "Про прибытие", "percentage": 5, "synonyms": ["Прибытие"] }
         ]
     },
@@ -280,7 +280,7 @@
         "answers": [
             { "title": "Шеф", "percentage": 43, "synonyms": [] },
             { "title": "Босс", "percentage": 27, "synonyms": [] },
-            { "title": "Козёл", "percentage": 15, "synonyms": [] },
+            { "title": "Козел", "percentage": 15, "synonyms": [] },
             { "title": "Урод", "percentage": 11, "synonyms": [] },
             { "title": "Дурак", "percentage": 4, "synonyms": [] }
         ]
@@ -301,7 +301,7 @@
         "title": "Как зовут героя русской сказки?",
         "answers": [
             { "title": "Иван", "percentage": 39, "synonyms": [] },
-            { "title": "Алёна или Елена", "percentage": 24, "synonyms": [] },
+            { "title": "Алена или Елена", "percentage": 24, "synonyms": [] },
             { "title": "Василиса", "percentage": 17, "synonyms": [] },
             { "title": "Мария", "percentage": 11, "synonyms": [] },
             { "title": "Анастасия", "percentage": 9, "synonyms": [] }
@@ -342,7 +342,7 @@
     },
     {
         "id": 32,
-        "title": "Кто или что бывает чёрно-белым?",
+        "title": "Кто или что бывает черно-белым?",
         "answers": [
             { "title": "Кино", "percentage": 52, "synonyms": ["Фильм"] },
             { "title": "Зебра", "percentage": 28, "synonyms": [] },
@@ -381,12 +381,12 @@
             { "title": "Деньги", "percentage": 23, "synonyms": [] },
             { "title": "Ключи", "percentage": 19, "synonyms": [] },
             { "title": "Платок", "percentage": 13, "synonyms": [] },
-            { "title": "Кошелёк", "percentage": 2, "synonyms": [] }
+            { "title": "Кошелек", "percentage": 2, "synonyms": [] }
         ]
     },
     {
         "id": 36,
-        "title": "Какая ягода растёт в лесу?",
+        "title": "Какая ягода растет в лесу?",
         "answers": [
             { "title": "Земляника", "percentage": 46, "synonyms": [] },
             { "title": "Малина", "percentage": 25, "synonyms": [] },
@@ -543,7 +543,7 @@
         "title": "Что говорит иностранец после первой рюмки водки?",
         "answers": [
             { "title": "Хорошо", "percentage": 35, "synonyms": [] },
-            { "title": "Ещё", "percentage": 22, "synonyms": [] },
+            { "title": "Еще", "percentage": 22, "synonyms": [] },
             { "title": "Хватит", "percentage": 17, "synonyms": [] },
             { "title": "Горько", "percentage": 10, "synonyms": [] },
             { "title": "Тост", "percentage": 5, "synonyms": [] }
