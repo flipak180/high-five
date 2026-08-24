@@ -257,9 +257,11 @@ ion-back-button {
 .bottom {
     position: fixed;
     bottom: var(--ion-safe-area-bottom, 0);
-    left: 0;
+    left: calc(50% - 16px);
+    transform: translate(-50%, 0);
     margin: 16px;
     width: calc(100% - 32px);
+    max-width: 400px;
 
     h1 {
         color: var(--black);
@@ -281,7 +283,7 @@ ion-back-button {
             display: block;
             font-size: 16px;
             width: 100%;
-            height: 40px;
+            aspect-ratio: 8 / 1;
             color: var(--black);
         }
 
