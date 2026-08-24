@@ -60,6 +60,12 @@ ion-toolbar {
     --background: #EF476F;
     color: var(--white);
 }
+ion-content {
+    --background: url('@/assets/escheresque.png');
+}
+ion-content::part(background) {
+    opacity: 0.05;
+}
 .questions {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
