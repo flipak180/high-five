@@ -61,10 +61,7 @@ ion-toolbar {
     color: var(--white);
 }
 ion-content {
-    --background: url('@/assets/escheresque.png');
-}
-ion-content::part(background) {
-    opacity: 0.05;
+    --background: url('@/assets/escheresque.jpg');
 }
 .questions {
     display: grid;

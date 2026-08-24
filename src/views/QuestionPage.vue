@@ -175,6 +175,9 @@ ion-toolbar {
     --background: #EF476F;
     color: var(--white);
 }
+ion-content {
+    --background: url('@/assets/escheresque.jpg');
+}
 ion-back-button {
     --color: #fff;
 }
